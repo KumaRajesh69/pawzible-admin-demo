@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.h1-page {
+  @apply text-8xl text-red-500 uppercase;
+}
+
+.button {
+  @apply bg-orangePrimery py-2 rounded-lg px-5 text-white;
+}
+.section__heading {
+  @apply text-3xl font-black;
+}
+
+.demo__class {
+  @apply mx-auto mt-20 border border-black p-4 w-max md:flex justify-between rounded-2xl shadow space-y-5 md:space-y-0 md:space-x-5 items-center;
+}
+
+.navbar__active__link {
+  @apply h-max py-1 border-white text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium;
+}
+
+.navbar__nonactive__link {
+  @apply h-max py-1 border-transparent hover:border-white text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium;
+}
+
+.layout__padding {
+  @apply px-4 md:px-6 lg:px-8 xl:px-16 mx-auto;
+  @layer max-w-screen;
+}
+.bg-custom-image {
+  background-image: url("/images/bg.svg");
+}
+
+td {
+  @apply py-4 border-b px-3;
+}
+th {
+  @apply py-4 px-3;
+}
+.td__Name {
+  @apply font-medium text-lg;
+}
+.td_Button {
+  @apply bg-orangePrimery text-white text-xs px-[6px] py-1 rounded-md;
+}
+.td_ViewButton {
+  @apply text-base font-medium;
+}
+.table__body__text {
+  @apply font-normal text-[#6a6a6a];
+}
