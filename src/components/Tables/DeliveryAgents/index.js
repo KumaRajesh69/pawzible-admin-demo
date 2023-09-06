@@ -1,3 +1,4 @@
+import DeliveryProfile from "@/components/StackeHolder/DeliveryProfile";
 import React from "react";
 
 function DeliveryAgents({ table }) {
@@ -35,12 +36,15 @@ function DeliveryAgents({ table }) {
                   <button className="td_Button">{item.status}</button>
                 </td>
                 <td>
-                  <button>{item.details}</button>
+                  <a href={"/delivery"}>{"View Details"}</a>
                 </td>
               </tr>
             </tbody>
           ))}
         </table>
+      </div>
+      <div>
+        <DeliveryProfile />
       </div>
     </div>
   );

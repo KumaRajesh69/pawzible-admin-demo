@@ -1,4 +1,5 @@
 import React from "react";
+import NewProduct from "./NewProduct";
 
 function InvoiceManagement({ table }) {
   return (

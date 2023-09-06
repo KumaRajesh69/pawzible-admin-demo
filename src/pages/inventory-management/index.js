@@ -1,4 +1,6 @@
 import Inventory from "@/components/Inventory";
+import NewProduct from "@/components/InvoiceManagement/NewProduct";
+import Pedigree from "@/components/InvoiceManagement/Pedigree";
 import BreadCrum from "@/components/Layout/common/BreadCrum";
 import Heading from "@/components/Layout/common/Heading";
 import React from "react";
@@ -117,6 +119,8 @@ function InventoryManagement() {
 
       <Heading title={"Inventory Management"} />
       <Inventory table={inventoryData} />
+      <NewProduct />
+      <Pedigree />
     </div>
   );
 }

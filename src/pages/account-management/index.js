@@ -1,3 +1,4 @@
+import InvoiceManagement from "@/components/InvoiceManagement";
 import BreadCrum from "@/components/Layout/common/BreadCrum";
 import Heading from "@/components/Layout/common/Heading";
 import React from "react";
@@ -48,6 +49,7 @@ function AccountManage() {
       />
 
       <Heading title={"Account Management"} />
+      <InvoiceManagement table={data} />
     </div>
   );
 }

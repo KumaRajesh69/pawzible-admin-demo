@@ -1,69 +1,106 @@
-import Image from "next/image";
 import { Inter } from "next/font/google";
-import { XCircleIcon } from "@heroicons/react/outline";
+import { useRouter } from "next/router";
+import { useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+function Home() {
+  const [data, setData] = useState();
+  const router = useRouter();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("login clicked");
+    router.push("/dashboard");
+  };
+
   return (
-    <div>
-      <div className="mt-10  rounded-xl overflow-hidden  shadow-xl max-w-md w-full mx-auto">
-        <div className="py-4 border-b px-8">
-          <div className="flex flex-row justify-between ">
-            <p className="text-xl font-bold text-orangePrimery">
-              Terms & Conditions
-            </p>
-            <button className="  ">
-              {/* <span class=" text-red-600 h-3  justify-center items-center flex p-1 rounded-full ">
-              X
-            </span> */}
-              <XCircleIcon className="w-6 h-6 font-light text-red-500" />
-            </button>
+    <div className="h-screen">
+      <div className="grid grid-col-1 md:grid-cols-2 h-screen">
+        <div className="h-screen hidden md:flex flex-col">
+          <div className=" flex-1 flex justify-center items-center">
+            <img src="/images/3dpetcat2.svg" className="h-[50vh]" />
           </div>
-          <div className="flex space-x-4 pt-8">
+          <div>
+            <div className="bg-orangePrimery flex flex-col justify-center items-center h-[25vh] space-y-5">
+              <div className="text-center text-white text-4xl font-semibold">
+                <p>Welcome back</p>
+                <p>Hooman!</p>
+              </div>
+              <p className="text-sm 2xl:text-lg font-normal text-white">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="flex justify-center items-center w-full bg-slate-50">
+          <div className=" p-10 w-full max-w-lg">
+            <div className="text-center space-y-2">
+              <p className="text-xl font-semibold text-black">
+                Welcome to Pawzible
+              </p>
+              <p className="text-lg font-normal text-gray-600">
+                Please enter your email and password to login
+              </p>
+            </div>
+
             <div>
-              <img src="/images/innocent-cat.svg" />
+              <div>
+                <form onSubmit={handleSubmit}>
+                  <div className="my-4">
+                    <label for="username" className=" text-lg  text-gray-600">
+                      Email Address
+                    </label>
+                    <input
+                      type="text"
+                      id="username"
+                      name="username"
+                      placeholder="Enter Your Email"
+                      className="mt-1 p-2 border w-full rounded-xl focus:outline-none focus:ring focus:ring-orange-200"
+                    ></input>
+                  </div>
+
+                  <div className="mb-4">
+                    <label
+                      for="password"
+                      className="block text-lg  text-gray-600"
+                    >
+                      Password
+                    </label>
+                    <input
+                      type="password"
+                      id="password"
+                      name="password"
+                      placeholder="Enter Password"
+                      className="mt-1 p-2 border w-full rounded-xl focus:outline-none  focus:ring focus:ring-orange-200"
+                    ></input>
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="bg-orangePrimery w-full text-white
+                     px-4 py-2 rounded-xl hover:bg-orange-400 focus:outline-none
+                      focus:ring focus:ring-orange-300"
+                  >
+                    Login
+                  </button>
+                </form>
+              </div>
             </div>
-            <div className="">
-              <p className="text-2xl font-semibold "> 25% OFF</p>
-              <p className="text-base font-normal  ">
-                Get 25% at your next Product{" "}
-              </p>
-              <p className="text-xs font-medium text-gray-400">
-                Valid until 03 July 2023
+            <button></button>
+            <div>
+              <p className="text-center">
+                By Using the app, you agree to
+                <span className="text-orangePrimery">Terms & Conditions.</span>
               </p>
             </div>
           </div>
-        </div>
-        <div class="border-t-2 border-dashed border-gray-400 "></div>
-        <div className="px-8 py-8 space-y-3 ">
-          <div className="flex space-x-2 items-center">
-            <div className="rounded-full h-1 w-1 bg-black"> </div>
-            <p className="text-sm font-medium">
-              Reedeamble at all Products in the INDIA.
-            </p>
-          </div>
-          <div className="flex space-x-2 items-center">
-            <div className="rounded-full h-1 w-1 items-start flex bg-black"></div>
-            <p className="text-sm font-medium ">
-              Not valid with any other discounts and promotions.
-            </p>
-          </div>
-          <div className="flex space-x-2 items-center">
-            <div className="rounded-full h-1 w-1 bg-black"> </div>
-            <p className="text-sm font-medium"> No cash value. </p>
-          </div>
-        </div>
-        <div class="border-t-2 border-dashed border-gray-400 "></div>
-        <div className=" flex justify-between items-center w-full p-8 pt-20">
-          <button className="bg-transparent hover:bg-red-500 text-gray-500 font-semibold hover:text-white py-2 px-4 border border-black hover:border-transparent rounded w-40">
-            Reject
-          </button>
-          <button className="bg-orangePrimery hover:bg-orange-500 text-white font-bold py-2 px-4 border  rounded w-40">
-            Approve
-          </button>
         </div>
       </div>
     </div>
   );
 }
+
+Home.layout = null;
+export default Home;

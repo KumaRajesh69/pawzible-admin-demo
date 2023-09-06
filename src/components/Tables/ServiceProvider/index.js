@@ -38,7 +38,7 @@ function ServiceProvider({ table }) {
                   <button className="td_Button">{item.status}</button>
                 </td>
                 <td>
-                  <button>{item.details}</button>
+                  <a href={"/serviceprovider"}>{"View Details"}</a>
                 </td>
               </tr>
             </tbody>

@@ -1,5 +1,8 @@
 import BreadCrum from "@/components/Layout/common/BreadCrum";
 import Heading from "@/components/Layout/common/Heading";
+import StackHolder from "@/components/StackeHolder";
+import DeliveryProfile from "@/components/StackeHolder/DeliveryProfile";
+import UserProfile from "@/components/StackeHolder/DeliveryProfile";
 import DeliveryAgents from "@/components/Tables/DeliveryAgents";
 import Doctors from "@/components/Tables/Doctors";
 import ServiceProvider from "@/components/Tables/ServiceProvider";
@@ -26,7 +29,7 @@ const userData = [
     gender: "Male",
     address: "BBSR",
     category: "Grooming",
-    status: "Approved",
+    status: "unApproved",
     details: "View Details",
   },
   {
@@ -37,7 +40,7 @@ const userData = [
     gender: "Male",
     address: "BBSR",
     category: "Product",
-    status: "Approved",
+    status: "unApproved",
     details: "View Details",
   },
   {
@@ -246,66 +249,73 @@ function StakeholderManagement() {
   };
 
   return (
-    <div>
-      <BreadCrum
-        data={[
-          { name: "Dashboard", href: "/dashboard" },
-          { name: " Stakeholder Management", href: "#" },
-        ]}
-      />
-      <Heading title={"Stakeholder Management"} />
-      <div className="flex w-full rounded-xl md:w-3/5 my-5 text-sm text-gray-500 font-medium">
-        <button
-          onClick={() => handelOnClick(1)}
-          className={` ${
-            tab === 1
-              ? " flex-1 p-3 rounded-l-lg text-black shadow-lg border-b-4 border-b-orangePrimery"
-              : " flex-1 p-3 rounded-l-lg  shadow-lg "
-          } `}
-        >
-          Users
-        </button>
-        <button
-          onClick={() => handelOnClick(2)}
-          className={` ${
-            tab === 2
-              ? " flex-1 p-3  text-black  shadow-lg border-b-4 border-b-orangePrimery"
-              : " flex-1 p-3 rounded-l-lg  shadow-lg "
-          } `}
-        >
-          Doctors
-        </button>
-        <button
-          onClick={() => handelOnClick(3)}
-          className={` ${
-            tab === 3
-              ? " flex-1 p-3  text-black  shadow-lg border-b-4 border-b-orangePrimery"
-              : " flex-1 p-3 rounded-l-lg  shadow-lg "
-          } `}
-        >
-          Delivery Agents
-        </button>
-        <button
-          onClick={() => handelOnClick(4)}
-          className={` ${
-            tab === 4
-              ? " flex-1 p-3 rounded-r-lg text-black  shadow-lg border-b-4 border-b-orangePrimery"
-              : " flex-1 p-3 rounded-r-lg  shadow-lg "
-          } `}
-        >
-          Service Providers
-        </button>
+    <>
+      <div>
+        <BreadCrum
+          data={[
+            { name: "Dashboard", href: "/dashboard" },
+            { name: " Stakeholder Management", href: "#" },
+          ]}
+        />
+        <Heading title={"Stakeholder Management"} />
+        <div className="flex justify-between">
+          <div className="flex w-full rounded-xl md:w-3/5 my-5 text-sm text-gray-500 font-medium">
+            <button
+              onClick={() => handelOnClick(1)}
+              className={` ${
+                tab === 1
+                  ? " flex-1 p-3 rounded-l-lg text-black shadow-lg border-b-4 border-b-orangePrimery"
+                  : " flex-1 p-3 rounded-l-lg  shadow-lg "
+              } `}
+            >
+              Users
+            </button>
+            <button
+              onClick={() => handelOnClick(2)}
+              className={` ${
+                tab === 2
+                  ? " flex-1 p-3  text-black  shadow-lg border-b-4 border-b-orangePrimery"
+                  : " flex-1 p-3 rounded-l-lg  shadow-lg "
+              } `}
+            >
+              Doctors
+            </button>
+            <button
+              onClick={() => handelOnClick(3)}
+              className={` ${
+                tab === 3
+                  ? " flex-1 p-3  text-black  shadow-lg border-b-4 border-b-orangePrimery"
+                  : " flex-1 p-3 rounded-l-lg  shadow-lg "
+              } `}
+            >
+              Delivery Agents
+            </button>
+            <button
+              onClick={() => handelOnClick(4)}
+              className={` ${
+                tab === 4
+                  ? " flex-1 p-3 rounded-r-lg text-black  shadow-lg border-b-4 border-b-orangePrimery"
+                  : " flex-1 p-3 rounded-r-lg  shadow-lg "
+              } `}
+            >
+              Service Providers
+            </button>
+          </div>
+          <button className="bg-orangePrimery rounded-md my-5  text-white font-medium p-2">
+            Register New User
+          </button>
+        </div>
+        {tab === 1 ? (
+          <User table={userData} />
+        ) : tab === 2 ? (
+          <Doctors table={doctorsData} />
+        ) : tab === 3 ? (
+          <DeliveryAgents table={deliveryData} />
+        ) : (
+          <ServiceProvider table={servicesData} />
+        )}
       </div>
-      {tab === 1 ? (
-        <User table={userData} />
-      ) : tab === 2 ? (
-        <Doctors table={doctorsData} />
-      ) : tab === 3 ? (
-        <DeliveryAgents table={deliveryData} />
-      ) : (
-        <ServiceProvider table={servicesData} />
-      )}
-    </div>
+    </>
   );
 }
 

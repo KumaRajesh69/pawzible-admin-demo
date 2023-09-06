@@ -1,6 +1,34 @@
+import StackHolder from "@/components/StackeHolder";
+import { useRouter } from "next/router";
 import React from "react";
+import RegisterCard from "./RegisterCard";
+import Pet from "./pet";
+import Overview from "./Overview";
 
 function User({ table }) {
+  const router = useRouter();
+
+  const handleOnclick = (item) => {
+    console.log("View Details on click");
+    console.log(item);
+    // console.log(item.name);
+
+    // console.log(item.status);
+    // if (item.status === "Approved") {
+    //   console.log("yes");
+    // } else {
+    //   console.log("No");
+    // }
+    funPrintItem(item);
+  };
+
+  const funPrintItem = (xyz) => {
+    console.log(xyz.id);
+    printItemEmail(xyz.mail);
+  };
+  const printItemEmail = (abc) => {
+    console.log(abc);
+  };
   return (
     <div>
       <div className="h-full mb-20 mt-10 rounded-xl overflow-x-scroll md:overflow-x-hidden shadow-lg ">
@@ -18,13 +46,11 @@ function User({ table }) {
               <th>Details</th>
             </tr>
           </thead>
-          {table.map((item) => (
-            <tbody className="w-full">
+          <tbody className="w-full">
+            {table.map((item) => (
               <tr>
                 <td>{item.id}</td>
-                <td td className="td__Name">
-                  {item.name}
-                </td>
+                <td className="td__Name">{item.name}</td>
                 <td className="">{item.phone}</td>
                 <td className="table__body__text">{item.mail}</td>
                 <td className="table__body__text">{item.gender}</td>
@@ -35,13 +61,21 @@ function User({ table }) {
                   <button className="td_Button">{item.status}</button>
                 </td>
                 <td>
-                  <button>{item.details}</button>
+                  {/* <button onClick={() => handleOnclick(item)}> */}
+                  <a href={"/user"}>{"View Details"}</a>
+                  {/* </button> */}
                 </td>
               </tr>
-            </tbody>
-          ))}
+            ))}
+          </tbody>
         </table>
       </div>
+      {/* <div>
+        <StackHolder />
+        <RegisterCard />
+        <Overview />
+        <Pet />
+      </div> */}
     </div>
   );
 }

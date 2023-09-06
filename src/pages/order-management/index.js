@@ -1,6 +1,8 @@
 import BreadCrum from "@/components/Layout/common/BreadCrum";
 import Heading from "@/components/Layout/common/Heading";
 import OrderManage from "@/components/OrderManage";
+import OrderUser from "@/components/OrderManage/User/user";
+import User from "@/components/Tables/Users";
 import React, { useState } from "react";
 
 const orderManagementData = [
@@ -117,38 +119,43 @@ function OrderManagement() {
       />
 
       <Heading title={"Order Management"} />
-
-      <div className="flex w-full rounded-xl md:w-3/5 my-5 text-sm text-gray-500 font-medium">
-        <button
-          className={` ${
-            tab === 1
-              ? " flex-1 p-3 rounded-l-lg  shadow-lg border-b-4 border-b-orangePrimery"
-              : " flex-1 p-3 rounded-l-lg  shadow-lg "
-          } `}
-          onClick={() => handelOnClick(1)}
-        >
-          Today
-        </button>
-        <button
-          onClick={() => handelOnClick(2)}
-          className={` ${
-            tab === 2
-              ? " flex-1 p-3   shadow-lg border-b-4 border-b-orangePrimery"
-              : " flex-1 p-3  shadow-lg "
-          } `}
-        >
-          Upcoming
-        </button>
-        <button
-          onClick={() => handelOnClick(3)}
-          className={` ${
-            tab === 3
-              ? " flex-1 p-3 rounded-r-lg  shadow-lg border-b-4 border-b-orangePrimery"
-              : " flex-1 p-3 rounded-r-lg  shadow-lg "
-          } `}
-        >
-          Past
-        </button>
+      <div className="flex w-full justify-between items-center ">
+        <div className="flex w-full rounded-xl md:w-3/5 my-5 text-sm text-gray-500 font-medium">
+          <button
+            className={` ${
+              tab === 1
+                ? " flex-1 p-3 rounded-l-lg  shadow-lg border-b-4 border-b-orangePrimery"
+                : " flex-1 p-3 rounded-l-lg  shadow-lg "
+            } `}
+            onClick={() => handelOnClick(1)}
+          >
+            Today
+          </button>
+          <button
+            onClick={() => handelOnClick(2)}
+            className={` ${
+              tab === 2
+                ? " flex-1 p-3   shadow-lg border-b-4 border-b-orangePrimery"
+                : " flex-1 p-3  shadow-lg "
+            } `}
+          >
+            Upcoming
+          </button>
+          <button
+            onClick={() => handelOnClick(3)}
+            className={` ${
+              tab === 3
+                ? " flex-1 p-3 rounded-r-lg  shadow-lg border-b-4 border-b-orangePrimery"
+                : " flex-1 p-3 rounded-r-lg  shadow-lg "
+            } `}
+          >
+            Past
+          </button>
+        </div>
+        <div className="">
+          <button className="flex flex-row justify-end">user</button>
+          {/* <OrderUser /> */}
+        </div>
       </div>
 
       {tab === 1 ? (
