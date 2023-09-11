@@ -2,7 +2,7 @@ import BreadCrum from "@/components/Layout/common/BreadCrum";
 import Heading from "@/components/Layout/common/Heading";
 import Appointment from "@/components/Tables/Doctors/Appointment";
 import Blog from "@/components/Tables/Doctors/Blog";
-import DetailsBlog from "@/components/Tables/Doctors/DetailsBlog";
+import DetailsBlog from "@/pages/detailsblog";
 import Experience from "@/components/commonComponet/Experience";
 import Location from "@/components/commonComponet/Location";
 import OverView from "@/components/commonComponet/OverView";

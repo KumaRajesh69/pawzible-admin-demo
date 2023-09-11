@@ -89,7 +89,7 @@ export default function Layout({ children }) {
 
   return (
     <>
-      <div>
+      <div className="min-h-screen ">
         <Transition.Root show={sidebarOpen} as={Fragment}>
           <Dialog
             as="div"
@@ -282,8 +282,8 @@ export default function Layout({ children }) {
             </div>
           </div>
 
-          <main>
-            <div className="p-5">{children}</div>
+          <main className="bg-gray-50 min-h-[calc(100vh-64px)] ">
+            <div className="z-20 p-5">{children}</div>
           </main>
         </div>
       </div>

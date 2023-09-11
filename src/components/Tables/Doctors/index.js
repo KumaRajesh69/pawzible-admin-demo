@@ -3,7 +3,7 @@ import React from "react";
 function Doctors({ table }) {
   return (
     <div>
-      <div className="h-full mb-20 mt-10 rounded-xl overflow-x-scroll md:overflow-x-hidden shadow-lg ">
+      <div className="h-full my-4  rounded-xl overflow-x-scroll md:overflow-x-hidden shadow-lg ">
         <table className="w-full">
           <thead className="bg-blue-200 h-10 rounded-t-xl ">
             <tr className="text-left ">

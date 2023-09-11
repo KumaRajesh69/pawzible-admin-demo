@@ -37,7 +37,63 @@ const data = [
     buton: "Resolve",
   },
 ];
-
+const invoiceData = [
+  {
+    id: "1",
+    name: "Ethel Howard",
+    payment: "P1328SFFS001",
+    phone: "8260724967",
+    product: "Pedigree",
+    price: "1000/-",
+    category: "Product",
+    invoice: "/images/file.svg",
+    sendinvoice: "/images/msg.svg",
+  },
+  {
+    id: "2",
+    name: "Ethel Howard",
+    payment: "P1328SFFS001",
+    phone: "8260724967",
+    product: "Pedigree",
+    price: "1000/-",
+    category: "Product",
+    invoice: "/images/file.svg",
+    sendinvoice: "/images/msg.svg",
+  },
+  {
+    id: "3",
+    name: "Ethel Howard",
+    payment: "P1328SFFS001",
+    phone: "8260724967",
+    product: "Pedigree",
+    price: "1000/-",
+    category: "Product",
+    invoice: "/images/file.svg",
+    sendinvoice: "/images/msg.svg",
+  },
+  {
+    id: "4",
+    name: "Ethel Howard",
+    payment: "P1328SFFS001",
+    phone: "8260724967",
+    product: "Pedigree",
+    price: "1000/-",
+    category: "Product",
+    invoice: "/images/file.svg",
+    sendinvoice: "/images/msg.svg",
+  },
+  {
+    id: "5",
+    name: "Ethel Howard",
+    payment: "P1328SFFS001",
+    phone: "8260724967",
+    product: "Pedigree",
+    price: "1000/-",
+    category: "Product",
+    invoice: "/images/file.svg",
+    sendinvoice: "/images/msg.svg",
+  },
+];
 function AccountManage() {
   return (
     <div>
@@ -49,7 +105,14 @@ function AccountManage() {
       />
 
       <Heading title={"Account Management"} />
-      <InvoiceManagement table={data} />
+      <div className="">
+        <div className="flex flex-row w-full justify-end">
+          <button className=" bg-orangePrimery rounded-md p-2 text-white">
+            Your Templates
+          </button>
+        </div>
+        <InvoiceManagement table={invoiceData} />
+      </div>
     </div>
   );
 }

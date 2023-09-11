@@ -1,3 +1,5 @@
+import CommonDialog from "@/components/Dialogs/CommonDialog";
+import RegisterUserDialog from "@/components/Dialogs/RegisterUserDialog";
 import BreadCrum from "@/components/Layout/common/BreadCrum";
 import Heading from "@/components/Layout/common/Heading";
 import StackHolder from "@/components/StackeHolder";
@@ -7,6 +9,7 @@ import DeliveryAgents from "@/components/Tables/DeliveryAgents";
 import Doctors from "@/components/Tables/Doctors";
 import ServiceProvider from "@/components/Tables/ServiceProvider";
 import User from "@/components/Tables/Users";
+import RegisterCard from "@/components/Tables/Users/RegisterCard";
 import React, { useState } from "react";
 
 const userData = [
@@ -243,6 +246,7 @@ const servicesData = [
 
 function StakeholderManagement() {
   const [tab, setTab] = useState(1);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handelOnClick = (number) => {
     setTab(number);
@@ -301,9 +305,14 @@ function StakeholderManagement() {
               Service Providers
             </button>
           </div>
-          <button className="bg-orangePrimery rounded-md my-5  text-white font-medium p-2">
-            Register New User
-          </button>
+          {tab === 1 && (
+            <button
+              className="bg-orangePrimery rounded-md my-5 text-white font-medium p-2 "
+              onClick={() => setIsOpen(true)}
+            >
+              Register New User
+            </button>
+          )}
         </div>
         {tab === 1 ? (
           <User table={userData} />
@@ -315,6 +324,10 @@ function StakeholderManagement() {
           <ServiceProvider table={servicesData} />
         )}
       </div>
+
+      <CommonDialog isOpen={isOpen} setIsOpen={setIsOpen}>
+        <RegisterCard />
+      </CommonDialog>
     </>
   );
 }

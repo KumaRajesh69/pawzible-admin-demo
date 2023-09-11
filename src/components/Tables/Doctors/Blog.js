@@ -55,7 +55,7 @@ function Blog() {
           </p>
 
           <a
-            href="#"
+            href="/detailsblog"
             class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
           >
             read more

@@ -1,8 +1,11 @@
+import CommonDialog from "@/components/Dialogs/CommonDialog";
 import BreadCrum from "@/components/Layout/common/BreadCrum";
 import Heading from "@/components/Layout/common/Heading";
 import OrderManage from "@/components/OrderManage";
+import OrderId from "@/components/OrderManage/OrderId";
 import OrderUser from "@/components/OrderManage/User/user";
 import User from "@/components/Tables/Users";
+import { ChevronDownIcon } from "@heroicons/react/outline";
 import React, { useState } from "react";
 
 const orderManagementData = [
@@ -104,6 +107,7 @@ const orderManagementData3 = [
 
 function OrderManagement() {
   const [tab, setTab] = useState(1);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handelOnClick = (number) => {
     setTab(number);
@@ -119,7 +123,7 @@ function OrderManagement() {
       />
 
       <Heading title={"Order Management"} />
-      <div className="flex w-full justify-between items-center ">
+      <div className="flex w-full justify-between items-center">
         <div className="flex w-full rounded-xl md:w-3/5 my-5 text-sm text-gray-500 font-medium">
           <button
             className={` ${
@@ -152,9 +156,34 @@ function OrderManagement() {
             Past
           </button>
         </div>
-        <div className="">
-          <button className="flex flex-row justify-end">user</button>
-          {/* <OrderUser /> */}
+        <div className=" ">
+          {tab === 1 && (
+            <button
+              onClick={() => setIsOpen(true)}
+              className="flex space-x-2 justify-end text-orange-500 px-4 py-2 rounded  border border-gray-200"
+            >
+              <div>user</div>
+              <ChevronDownIcon className="h-4 w-4 text-orangePrimery self-center " />
+            </button>
+          )}
+          {tab === 2 && (
+            <button
+              onClick={() => setIsOpen(true)}
+              className="flex space-x-2 justify-end text-orange-500 px-4 py-2 rounded  border border-gray-200"
+            >
+              <div>Doctor Profile</div>
+              <ChevronDownIcon className="h-4 w-4 text-orangePrimery self-center " />
+            </button>
+          )}
+          {tab === 3 && (
+            <button
+              onClick={() => setIsOpen(true)}
+              className="flex space-x-2 justify-end text-orange-500 px-4 py-2 rounded  border border-gray-200"
+            >
+              <div>track order</div>
+              <ChevronDownIcon className="h-4 w-4 text-orangePrimery self-center " />
+            </button>
+          )}
         </div>
       </div>
 
@@ -171,6 +200,11 @@ function OrderManagement() {
           <OrderManage table={orderManagementData3} />
         </div>
       )}
+
+      <CommonDialog isOpen={isOpen} setIsOpen={setIsOpen}>
+        {tab === 1 && <OrderUser />}
+        {tab === 2 && <OrderId />}
+      </CommonDialog>
     </div>
   );
 }
