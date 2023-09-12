@@ -3,16 +3,13 @@ import React from "react";
 
 function TermCondition() {
   return (
-    <div className="mt-10  rounded-xl overflow-hidden  shadow-xl max-w-md w-full mx-auto">
-      <div className="py-4 border-b px-8">
+    <>
+      <div className="py-4 border-b px-8 ">
         <div className="flex flex-row justify-between ">
           <p className="text-xl font-bold text-orangePrimery">
             Terms & Conditions
           </p>
           <button className="  ">
-            {/* <span class=" text-red-600 h-3  justify-center items-center flex p-1 rounded-full ">
-              X
-            </span> */}
             <XCircleIcon className="w-6 h-6 font-light text-red-500" />
           </button>
         </div>
@@ -59,7 +56,8 @@ function TermCondition() {
           Approve
         </button>
       </div>
-    </div>
+      {/* <div className="rounded-xl overflow-hidden max-w-md w-full mx-auto "></div> */}
+    </>
   );
 }
 

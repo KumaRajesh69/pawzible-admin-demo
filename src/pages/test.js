@@ -11,6 +11,7 @@ import InventoryManagement from "./inventory-management";
 import InvoiceManagement from "@/components/InvoiceManagement";
 import Cms from "@/components/Cms";
 import Inventory from "@/components/Inventory";
+import ViewDetailsCard from "@/components/SupportCard/ViewDetailsCard";
 
 const orderManagementData2 = [
   {
@@ -629,6 +630,9 @@ function test() {
         Inventory Management Table
       </div>
       <Inventory table={inventoryData} />
+      <div>
+        <ViewDetailsCard />
+      </div>
     </div>
   );
 }

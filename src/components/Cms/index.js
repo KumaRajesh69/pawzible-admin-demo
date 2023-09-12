@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
+import TermCondition from "./TermCondition";
+import CommonDialog from "../Dialogs/CommonDialog";
 
 function Cms({ table }) {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div>
       <div className="h-full mb-20 mt-10 rounded-xl overflow-x-scroll md:overflow-x-hidden shadow-lg ">
@@ -27,7 +31,9 @@ function Cms({ table }) {
                 <td className="table__body__text">{item.category}</td>
                 <td className="table__body__text">{item.date}</td>
                 <td>
-                  <button>{item.term}</button>
+                  <button className="" onClick={() => setIsOpen(true)}>
+                    {item.term}
+                  </button>
                 </td>
                 <td>
                   <button className="td_Button">{item.status} </button>
@@ -37,6 +43,9 @@ function Cms({ table }) {
           ))}
         </table>
       </div>
+      <CommonDialog isOpen={isOpen} setIsOpen={setIsOpen}>
+        <TermCondition />
+      </CommonDialog>
     </div>
   );
 }

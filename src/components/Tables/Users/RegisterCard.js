@@ -1,3 +1,4 @@
+import { XCircleIcon } from "@heroicons/react/outline";
 import React from "react";
 
 function RegisterCard() {
@@ -9,9 +10,7 @@ function RegisterCard() {
           <div className="flex flex-row justify-between ">
             <p className="text-xl font-bold">Register new user</p>
             <button className="">
-              <span class="material-symbols-outlined bg-red-600 text-white rounded-full p-1">
-                close
-              </span>
+              <XCircleIcon className="h-10 w-10 text-red-500 rounded-full p-1" />
             </button>
           </div>
         </div>

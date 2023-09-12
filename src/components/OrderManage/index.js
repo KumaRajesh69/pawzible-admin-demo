@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
+import CommonDialog from "../Dialogs/CommonDialog";
+import OrderUser from "./User/user";
+import OrderTrack from "./OrderId/OrderTrack";
 
 function OrderManage({ table }) {
+  const [tab, setTab] = useState(1);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handelOnClick = (number) => {
+    setTab(number);
+  };
+
   return (
     <div>
       <div className="h-full mb-20 mt-10 rounded-xl overflow-x-scroll md:overflow-x-hidden shadow-lg ">
@@ -33,8 +43,10 @@ function OrderManage({ table }) {
                   </div>
                 </td>
                 <td className="table__body__text">{item.price}</td>
-                <td className="table__body__text">
-                  <img src={item.track} />
+                <td className="text-center ">
+                  <button className=" " onClick={() => setIsOpen(true)}>
+                    <img src={item.track} />
+                  </button>
                 </td>
                 <td>
                   <button className="td_Button">{item.status}</button>
@@ -45,6 +57,10 @@ function OrderManage({ table }) {
         </table>
         {/* </div> */}
       </div>
+
+      <CommonDialog isOpen={isOpen} setIsOpen={setIsOpen}>
+        <OrderTrack />
+      </CommonDialog>
     </div>
   );
 }

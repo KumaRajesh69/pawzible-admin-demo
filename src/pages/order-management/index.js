@@ -3,10 +3,13 @@ import BreadCrum from "@/components/Layout/common/BreadCrum";
 import Heading from "@/components/Layout/common/Heading";
 import OrderManage from "@/components/OrderManage";
 import OrderId from "@/components/OrderManage/OrderId";
+import OrderTrack from "@/components/OrderManage/OrderId/OrderTrack";
+// import OrderTrack from "@/components/OrderManage/OrderTrack";
 import OrderUser from "@/components/OrderManage/User/user";
 import User from "@/components/Tables/Users";
+import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/outline";
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 
 const orderManagementData = [
   {
@@ -158,13 +161,38 @@ function OrderManagement() {
         </div>
         <div className=" ">
           {tab === 1 && (
-            <button
-              onClick={() => setIsOpen(true)}
-              className="flex space-x-2 justify-end text-orange-500 px-4 py-2 rounded  border border-gray-200"
-            >
-              <div>user</div>
-              <ChevronDownIcon className="h-4 w-4 text-orangePrimery self-center " />
-            </button>
+            <Menu as="div" className="ml-3 relative">
+              <div>
+                <Menu.Button className="max-w-xs bg-white flex items-center outline-none text-sm  focus:outline-none ">
+                  <span className="sr-only">Open user menu</span>
+                  <div className="flex space-x-2 justify-end text-orange-500 px-4 py-2 rounded  border border-gray-200 ">
+                    <div>user</div>
+                    <ChevronDownIcon className="h-4 w-4 text-orangePrimery self-center " />
+                  </div>
+                </Menu.Button>
+              </div>
+              <Transition
+                as={Fragment}
+                enter="transition ease-out duration-100"
+                enterFrom="transform opacity-0 scale-95"
+                enterTo="transform opacity-100 scale-100"
+                leave="transition ease-in duration-75"
+                leaveFrom="transform opacity-100 scale-100"
+                leaveTo="transform opacity-0 scale-95"
+              >
+                <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-xl py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none p-4 space-y-5">
+                  <Menu.Item>
+                    {({ active }) => <div>Delivery Agent</div>}
+                  </Menu.Item>
+                  <Menu.Item>
+                    {({ active }) => <div>Veterinary Doctors</div>}
+                  </Menu.Item>
+                  <Menu.Item>
+                    {({ active }) => <div>Service Providers</div>}
+                  </Menu.Item>
+                </Menu.Items>
+              </Transition>
+            </Menu>
           )}
           {tab === 2 && (
             <button
@@ -204,7 +232,9 @@ function OrderManagement() {
       <CommonDialog isOpen={isOpen} setIsOpen={setIsOpen}>
         {tab === 1 && <OrderUser />}
         {tab === 2 && <OrderId />}
+        {tab === 3 && <OrderTrack />}
       </CommonDialog>
+      {/* <OrderTrack /> */}
     </div>
   );
 }
