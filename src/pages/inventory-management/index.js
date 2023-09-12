@@ -119,8 +119,8 @@ function InventoryManagement() {
 
       <Heading title={"Inventory Management"} />
       <Inventory table={inventoryData} />
-      <NewProduct />
-      <Pedigree />
+      {/* <NewProduct />
+      <Pedigree /> */}
     </div>
   );
 }

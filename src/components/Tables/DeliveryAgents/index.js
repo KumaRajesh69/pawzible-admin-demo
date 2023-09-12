@@ -43,9 +43,9 @@ function DeliveryAgents({ table }) {
           ))}
         </table>
       </div>
-      <div>
+      {/* <div>
         <DeliveryProfile />
-      </div>
+      </div> */}
     </div>
   );
 }
