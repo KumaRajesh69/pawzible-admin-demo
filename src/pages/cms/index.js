@@ -121,7 +121,7 @@ function cms() {
       ) : tab === 2 ? (
         <Cms table={cmsData} />
       ) : (
-        tab === 3(<Cms table={cmsData} />)
+        <Cms table={cmsData} />
       )}
     </div>
   );
