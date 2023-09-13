@@ -1,7 +1,8 @@
-import InvoiceManagement from "@/components/InvoiceManagement";
+import AccountManagement from "@/components/AccountManagement";
+import Templates from "@/components/AccountManagement/Templates";
 import BreadCrum from "@/components/Layout/common/BreadCrum";
 import Heading from "@/components/Layout/common/Heading";
-import React from "react";
+import React, { useState } from "react";
 
 const data = [
   {
@@ -95,6 +96,12 @@ const invoiceData = [
   },
 ];
 function AccountManage() {
+  const [tab, setTab] = useState(1);
+
+  const handelOnClick = () => {
+    setTab();
+  };
+
   return (
     <div>
       <BreadCrum
@@ -103,15 +110,24 @@ function AccountManage() {
           { name: "Account Management", href: "#" },
         ]}
       />
+      {tab === 1 ? (
+        <Heading title={"Account Management"} />
+      ) : (
+        <Heading title={"Your Templates"} />
+      )}
 
-      <Heading title={"Account Management"} />
       <div className="">
         <div className="flex flex-row w-full justify-end">
-          <button className=" bg-orangePrimery rounded-md p-2 text-white">
-            Your Templates
-          </button>
+          {tab === 1 && (
+            <button
+              className="bg-orangePrimery rounded-md text-white font-medium p-2 "
+              onClick={() => handelOnClick(1)}
+            >
+              Your Templates
+            </button>
+          )}
         </div>
-        <InvoiceManagement table={invoiceData} />
+        {tab === 1 ? <AccountManagement table={invoiceData} /> : <Templates />}
       </div>
     </div>
   );

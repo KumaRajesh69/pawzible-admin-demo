@@ -1,7 +1,7 @@
 import { XCircleIcon } from "@heroicons/react/outline";
 import React from "react";
 
-function RegisterCard() {
+function RegisterCard({ isOpen, setIsOpen }) {
   return (
     <div>
       {" "}
@@ -9,7 +9,7 @@ function RegisterCard() {
         <div className="py-4 border-b px-8">
           <div className="flex flex-row justify-between ">
             <p className="text-xl font-bold">Register new user</p>
-            <button className="">
+            <button onClick={() => setIsOpen(false)}>
               <XCircleIcon className="h-10 w-10 text-red-500 rounded-full p-1" />
             </button>
           </div>
@@ -57,9 +57,6 @@ function RegisterCard() {
             Register
           </button>
         </div>
-        {/* <button class="mt-4 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md">
-          Button
-        </button> */}
       </div>
     </div>
   );

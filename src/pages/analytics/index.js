@@ -1,4 +1,4 @@
-import InvoiceManagement from "@/components/InvoiceManagement";
+import InvoiceManagement from "@/components/AccountManagement";
 import BreadCrum from "@/components/Layout/common/BreadCrum";
 import Heading from "@/components/Layout/common/Heading";
 import React from "react";

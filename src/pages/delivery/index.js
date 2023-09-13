@@ -9,10 +9,11 @@ import OverView from "@/components/commonComponet/OverView";
 import Review from "@/components/commonComponet/Review";
 import Wallet from "@/components/commonComponet/Wallet";
 import React, { useState } from "react";
+import Support from "../support";
 
 const tabs = [
   {
-    name: "Overview",
+    name: "Personal Information",
     value: 1,
   },
   {
@@ -28,16 +29,12 @@ const tabs = [
     value: 4,
   },
   {
-    name: "Locations",
+    name: "Order Details",
     value: 5,
   },
   {
-    name: "Appointments",
+    name: "Support",
     value: 6,
-  },
-  {
-    name: "Blogs",
-    value: 7,
   },
 ];
 
@@ -90,11 +87,9 @@ function index() {
         ) : tab === 5 ? (
           <Location />
         ) : tab === 6 ? (
-          <Appointment />
-        ) : tab === 7 ? (
-          <Blog />
+          <Support />
         ) : (
-          <DetailsBlog />
+          tab === 7(<Blog />)
         )}
       </div>
     </>

@@ -8,7 +8,7 @@ import Doctors from "@/components/Tables/Doctors";
 import DeliveryAgents from "@/components/Tables/DeliveryAgents";
 import ServiceProvider from "@/components/Tables/ServiceProvider";
 import InventoryManagement from "./inventory-management";
-import InvoiceManagement from "@/components/InvoiceManagement";
+import InvoiceManagement from "@/components/AccountManagement";
 import Cms from "@/components/Cms";
 import Inventory from "@/components/Inventory";
 import ViewDetailsCard from "@/components/SupportCard/ViewDetailsCard";

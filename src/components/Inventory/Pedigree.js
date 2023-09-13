@@ -54,7 +54,7 @@ function Pedigree() {
           ))}
 
           <div className="flex justify-end space-x-5">
-            <button class="bg-orangePrimery text-white hover:bg-orange-600 py-2 px-4 rounded focus:outline-none focus:ring focus:bg-orange-400">
+            <button className="bg-orangePrimery text-white hover:bg-orange-600 py-2 px-4 rounded focus:outline-none focus:ring focus:bg-orange-400">
               Close
             </button>
           </div>

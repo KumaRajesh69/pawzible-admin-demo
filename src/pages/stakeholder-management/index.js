@@ -326,7 +326,7 @@ function StakeholderManagement() {
       </div>
 
       <CommonDialog isOpen={isOpen} setIsOpen={setIsOpen}>
-        <RegisterCard />
+        <RegisterCard isOpen={isOpen} setIsOpen={setIsOpen} />
       </CommonDialog>
     </>
   );

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const data = [
   {
@@ -35,7 +35,9 @@ const data = [
   },
 ];
 
-function NewProduct() {
+function NewProduct({ isOpen, setIsOpen }) {
+  // const [isOpen, setIsOpen] = useState(true);
+
   return (
     <div className=" w-full max-w-lg rounded shadow-lg p-4">
       <form>
@@ -75,7 +77,10 @@ function NewProduct() {
         ))}
 
         <div className="flex justify-end space-x-5">
-          <button className=" text-gray-500 py-2 px-4 rounded border focus:ring">
+          <button
+            onClick={() => setIsOpen(false)}
+            className="text-gray-500 py-2 px-4 rounded border focus:ring"
+          >
             Discard
           </button>
           <button class="bg-orangePrimery text-white hover:bg-orange-600 py-2 px-4 rounded focus:outline-none focus:ring focus:bg-orange-400">

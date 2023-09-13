@@ -91,10 +91,8 @@ function index() {
           <Location />
         ) : tab === 6 ? (
           <Appointment />
-        ) : tab === 7 ? (
-          <Blog />
         ) : (
-          <DetailsBlog />
+          <Blog />
         )}
       </div>
     </>
