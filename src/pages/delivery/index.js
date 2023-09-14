@@ -10,6 +10,10 @@ import Review from "@/components/commonComponet/Review";
 import Wallet from "@/components/commonComponet/Wallet";
 import React, { useState } from "react";
 import Support from "../support";
+import PersonalInfo from "@/components/commonComponet/PersonalInfo";
+import OrderHistory from "@/components/commonComponet/OrderHistory";
+import SupportCard from "@/components/SupportCard";
+import SupportGridCard from "@/components/SupportGridCard";
 
 const tabs = [
   {
@@ -35,6 +39,58 @@ const tabs = [
   {
     name: "Support",
     value: 6,
+  },
+];
+
+const _data = {
+  image: "/images/Account.svg",
+  name: "Tom Cook",
+  email: "@tom_cook",
+  date: "21st July 2023",
+  para: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.",
+  buton: "Resolve",
+};
+
+const _data2 = [
+  {
+    image: "/images/Account.svg",
+    name: "Tom Cook",
+    email: "@tom_cook",
+    date: "21st July 2023",
+    para: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.",
+    buton: "Resolve",
+  },
+  {
+    image: "/images/Account.svg",
+    name: "Tom Cook",
+    email: "@tom_cook",
+    date: "21st July 2023",
+    para: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.",
+    buton: "Resolve",
+  },
+  {
+    image: "/images/Account.svg",
+    name: "Tom Cook",
+    email: "@tom_cook",
+    date: "21st July 2023",
+    para: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.",
+    buton: "Resolve",
+  },
+  {
+    image: "/images/Account.svg",
+    name: "Tom Cook",
+    email: "@tom_cook",
+    date: "21st July 2023",
+    para: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.",
+    buton: "Resolve",
+  },
+  {
+    image: "/images/Account.svg",
+    name: "Tom Cook",
+    email: "@tom_cook",
+    date: "21st July 2023",
+    para: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.",
+    buton: "Resolve",
   },
 ];
 
@@ -77,7 +133,7 @@ function index() {
           ))}
         </div>
         {tab === 1 ? (
-          <OverView />
+          <PersonalInfo />
         ) : tab === 2 ? (
           <Experience />
         ) : tab === 3 ? (
@@ -85,9 +141,15 @@ function index() {
         ) : tab === 4 ? (
           <Review />
         ) : tab === 5 ? (
-          <Location />
+          <OrderHistory />
         ) : tab === 6 ? (
-          <Support />
+          <>
+            {/* <SupportCard item={_data} /> */}
+            {/* {_data2.map((item) => (
+              <SupportCard item={item} />
+            ))} */}
+            <SupportGridCard supportTickets={_data2} />
+          </>
         ) : (
           tab === 7(<Blog />)
         )}

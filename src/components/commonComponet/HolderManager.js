@@ -3,7 +3,7 @@ import React from "react";
 function HolderManager() {
   return (
     <>
-      <div className="mx-5 my-9">
+      <div className="mx-5 my-8">
         <div className="flex items-center  rounded-xl overflow-hidden  shadow-lg  w-full h-44 space-x-3">
           <div class="p-4 flex ">
             <img

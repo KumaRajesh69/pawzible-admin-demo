@@ -44,7 +44,7 @@ function Cms({ table }) {
         </table>
       </div>
       <CommonDialog isOpen={isOpen} setIsOpen={setIsOpen}>
-        <TermCondition />
+        <TermCondition isOpen={isOpen} setIsOpen={setIsOpen} />
       </CommonDialog>
     </div>
   );

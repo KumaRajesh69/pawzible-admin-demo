@@ -1,7 +1,7 @@
 import { XCircleIcon } from "@heroicons/react/outline";
 import React from "react";
 
-function TermCondition() {
+function TermCondition({ isOpen, setIsOpen }) {
   return (
     <>
       <div className="py-4 border-b px-8 ">
@@ -9,7 +9,7 @@ function TermCondition() {
           <p className="text-xl font-bold text-orangePrimery">
             Terms & Conditions
           </p>
-          <button className="  ">
+          <button onClick={() => setIsOpen(false)} className="">
             <XCircleIcon className="w-6 h-6 font-light text-red-500" />
           </button>
         </div>

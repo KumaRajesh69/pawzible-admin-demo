@@ -108,8 +108,23 @@ const orderManagementData3 = [
   },
 ];
 
+const userTabledata = [
+  {
+    name: "user",
+    payment: "P1328SFFS001",
+    category: "Product",
+    subcategory: "Pedigree",
+    date: "Aug 12, 2023",
+    time: "3:42pm",
+    price: "1000 /-",
+    track: "/images/eye.svg",
+    status: "Completed",
+  },
+];
+
 function OrderManagement() {
   const [tab, setTab] = useState(1);
+  const [tab2, setTab2] = useState(1);
   const [isOpen, setIsOpen] = useState(false);
 
   const handelOnClick = (number) => {
@@ -159,49 +174,57 @@ function OrderManagement() {
             Past
           </button>
         </div>
-        <div className=" ">
-          {tab === 1 && (
-            <Menu as="div" className="ml-3 relative">
-              <div>
-                <Menu.Button className="max-w-xs bg-white flex items-center outline-none text-sm  focus:outline-none ">
-                  <span className="sr-only">Open user menu</span>
-                  <div className="flex space-x-2 justify-end text-orange-500 px-4 py-2 rounded  border border-gray-200 ">
-                    <div>user</div>
-                    <ChevronDownIcon className="h-4 w-4 text-orangePrimery self-center " />
-                  </div>
-                </Menu.Button>
-              </div>
-              <Transition
-                as={Fragment}
-                enter="transition ease-out duration-100"
-                enterFrom="transform opacity-0 scale-95"
-                enterTo="transform opacity-100 scale-100"
-                leave="transition ease-in duration-75"
-                leaveFrom="transform opacity-100 scale-100"
-                leaveTo="transform opacity-0 scale-95"
-              >
-                <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-xl py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none p-4 space-y-5">
-                  <Menu.Item>
-                    {({ active }) => <div>Delivery Agent</div>}
-                  </Menu.Item>
-                  <Menu.Item>
-                    {({ active }) => <div>Veterinary Doctors</div>}
-                  </Menu.Item>
-                  <Menu.Item>
-                    {({ active }) => <div>Service Providers</div>}
-                  </Menu.Item>
-                </Menu.Items>
-              </Transition>
-            </Menu>
-          )}
-          {tab === 2 && (
-            <button
-              onClick={() => setIsOpen(true)}
-              className="flex space-x-2 justify-end text-orange-500 px-4 py-2 rounded  border border-gray-200"
+        <div className="">
+          <Menu as="div" className="ml-3 relative">
+            <div>
+              <Menu.Button className="max-w-xs bg-white flex items-center outline-none text-sm  focus:outline-none ">
+                <span className="sr-only">Open user menu</span>
+                <div className="flex space-x-2 justify-end text-orange-500 px-4 py-2 rounded  border border-gray-200 ">
+                  <div>User</div>
+                  <ChevronDownIcon className="h-4 w-4 text-orangePrimery self-center " />
+                </div>
+              </Menu.Button>
+            </div>
+            <Transition
+              as={Fragment}
+              enter="transition ease-out duration-100"
+              enterFrom="transform opacity-0 scale-95"
+              enterTo="transform opacity-100 scale-100"
+              leave="transition ease-in duration-75"
+              leaveFrom="transform opacity-100 scale-100"
+              leaveTo="transform opacity-0 scale-95"
             >
-              <div>Doctor Profile</div>
-              <ChevronDownIcon className="h-4 w-4 text-orangePrimery self-center " />
-            </button>
+              <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-xl py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none p-4 space-y-5">
+                <Menu.Item>
+                  {({ active }) => (
+                    <button onClick={() => setTab2(1)}>Delivery Agent</button>
+                  )}
+                </Menu.Item>
+                <Menu.Item>
+                  {({ active }) => (
+                    <button onClick={() => setTab2(2)}>
+                      Veterinary Doctors
+                    </button>
+                  )}
+                </Menu.Item>
+                <Menu.Item>
+                  {({ active }) => (
+                    <button onClick={() => setTab2(3)}>
+                      Service Providers
+                    </button>
+                  )}
+                </Menu.Item>
+              </Menu.Items>
+            </Transition>
+          </Menu>
+          {/* {tab === 2 && (
+          <button
+            onClick={() => setIsOpen(true)}
+            className="flex space-x-2 justify-end text-orange-500 px-4 py-2 rounded  border border-gray-200"
+          >
+            <div>Doctor Profile</div>
+            <ChevronDownIcon className="h-4 w-4 text-orangePrimery self-center " />
+          </button>
           )}
           {tab === 3 && (
             <button
@@ -211,7 +234,7 @@ function OrderManagement() {
               <div>track order</div>
               <ChevronDownIcon className="h-4 w-4 text-orangePrimery self-center " />
             </button>
-          )}
+          )} */}
         </div>
       </div>
 
@@ -223,14 +246,26 @@ function OrderManagement() {
         <div>
           <OrderManage table={orderManagementData2} />
         </div>
-      ) : (
+      ) : tab === 3 ? (
         <div>
           <OrderManage table={orderManagementData3} />
+        </div>
+      ) : tab === 4 ? (
+        <div>
+          <OrderManage table={orderManagementData} />
+        </div>
+      ) : tab === 5 ? (
+        <div>
+          <OrderManage table={orderManagementData} />
+        </div>
+      ) : (
+        <div>
+          <OrderManage table={orderManagementData} />
         </div>
       )}
 
       <CommonDialog isOpen={isOpen} setIsOpen={setIsOpen}>
-        {tab === 1 && <OrderUser />}
+        {/* {tab === 1 && <OrderUser />} */}
         {tab === 2 && <OrderId />}
         {tab === 3 && <OrderTrack />}
       </CommonDialog>
