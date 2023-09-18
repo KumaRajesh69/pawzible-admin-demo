@@ -29,7 +29,7 @@ const SupportCard = ({ item }) => {
         </button>
       </div>
       <CommonDialog isOpen={isOpen} setIsOpen={setIsOpen}>
-        <ViewDetailsCard />
+        <ViewDetailsCard isOpen={isOpen} setIsOpen={setIsOpen} />
       </CommonDialog>
     </>
   );

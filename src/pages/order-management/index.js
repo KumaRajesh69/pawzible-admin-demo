@@ -81,7 +81,17 @@ const orderManagementData2 = [
     track: "/images/eye.svg",
     status: "Ongoing",
   },
-
+  {
+    name: "Devin Shelton",
+    payment: "P1328SFFS001",
+    category: "Product",
+    subcategory: "Pedigree",
+    date: "Aug 12, 2023",
+    time: "3:42pm",
+    price: "1000 /-",
+    track: "/images/eye.svg",
+    status: "Completed",
+  },
   {
     name: "Devin Shelton",
     payment: "P1328SFFS001",
@@ -95,6 +105,30 @@ const orderManagementData2 = [
   },
 ];
 const orderManagementData3 = [
+  {
+    name: "Devin Shelton",
+    payment: "P1328SFFS001",
+    category: "Product",
+    subcategory: "Pedigree",
+    date: "Aug 12, 2023",
+    time: "3:42pm",
+    price: "1000 /-",
+    track: "/images/eye.svg",
+    status: "Completed",
+  },
+  {
+    name: "Devin Shelton",
+    payment: "P1328SFFS001",
+    category: "Product",
+    subcategory: "Pedigree",
+    date: "Aug 12, 2023",
+    time: "3:42pm",
+    price: "1000 /-",
+    track: "/images/eye.svg",
+    status: "Completed",
+  },
+];
+const orderManagementData4 = [
   {
     name: "Devin Shelton",
     payment: "P1328SFFS001",
@@ -139,7 +173,6 @@ function OrderManagement() {
           { name: "Order Management", href: "#" },
         ]}
       />
-
       <Heading title={"Order Management"} />
       <div className="flex w-full justify-between items-center">
         <div className="flex w-full rounded-xl md:w-3/5 my-5 text-sm text-gray-500 font-medium">
@@ -151,7 +184,7 @@ function OrderManagement() {
             } `}
             onClick={() => handelOnClick(1)}
           >
-            Today
+            User
           </button>
           <button
             onClick={() => handelOnClick(2)}
@@ -161,7 +194,7 @@ function OrderManagement() {
                 : " flex-1 p-3  shadow-lg "
             } `}
           >
-            Upcoming
+            Delivery Agent
           </button>
           <button
             onClick={() => handelOnClick(3)}
@@ -171,7 +204,17 @@ function OrderManagement() {
                 : " flex-1 p-3 rounded-r-lg  shadow-lg "
             } `}
           >
-            Past
+            Veterinary Doctors
+          </button>{" "}
+          <button
+            onClick={() => handelOnClick(4)}
+            className={` ${
+              tab === 4
+                ? " flex-1 p-3 rounded-r-lg  shadow-lg border-b-4 border-b-orangePrimery"
+                : " flex-1 p-3 rounded-r-lg  shadow-lg "
+            } `}
+          >
+            Service Providers
           </button>
         </div>
         <div className="">
@@ -197,20 +240,23 @@ function OrderManagement() {
               <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-xl py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none p-4 space-y-5">
                 <Menu.Item>
                   {({ active }) => (
-                    <button onClick={() => setTab2(1)}>Delivery Agent</button>
-                  )}
-                </Menu.Item>
-                <Menu.Item>
-                  {({ active }) => (
-                    <button onClick={() => setTab2(2)}>
-                      Veterinary Doctors
+                    <button className="block" onClick={() => setTab2(1)}>
+                      {" "}
+                      Today
                     </button>
                   )}
                 </Menu.Item>
                 <Menu.Item>
                   {({ active }) => (
-                    <button onClick={() => setTab2(3)}>
-                      Service Providers
+                    <button className="block" onClick={() => setTab2(2)}>
+                      Upcoming
+                    </button>
+                  )}
+                </Menu.Item>
+                <Menu.Item>
+                  {({ active }) => (
+                    <button className="block" onClick={() => setTab2(3)}>
+                      Past
                     </button>
                   )}
                 </Menu.Item>
@@ -250,17 +296,9 @@ function OrderManagement() {
         <div>
           <OrderManage table={orderManagementData3} />
         </div>
-      ) : tab === 4 ? (
-        <div>
-          <OrderManage table={orderManagementData} />
-        </div>
-      ) : tab === 5 ? (
-        <div>
-          <OrderManage table={orderManagementData} />
-        </div>
       ) : (
         <div>
-          <OrderManage table={orderManagementData} />
+          <OrderManage table={orderManagementData4} />
         </div>
       )}
 

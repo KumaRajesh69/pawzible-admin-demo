@@ -1,5 +1,5 @@
 import { XCircleIcon } from "@heroicons/react/outline";
-import React from "react";
+import React, { useState } from "react";
 
 const data = [
   {
@@ -25,7 +25,8 @@ const data = [
   },
 ];
 
-function ViewDetailsCard() {
+function ViewDetailsCard({ isOpen, setIsOpen }) {
+  // const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="bg-white rounded-lg ">
       <div className="flex justify-between items-center mx-5 my-2">
@@ -35,7 +36,10 @@ function ViewDetailsCard() {
             Ticket Id: 1002635
           </div>
         </div>
-        <XCircleIcon className="text-red-500 h-7 w-7" />
+        <XCircleIcon
+          onClick={() => setIsOpen(false)}
+          className="text-red-500 h-7 w-7 cursor-pointer"
+        />
       </div>
       <hr />
       <div className="flex flex-col mx-5 my-2 p-2">

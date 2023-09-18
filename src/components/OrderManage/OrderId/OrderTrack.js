@@ -1,3 +1,4 @@
+import { ChevronRightIcon } from "@heroicons/react/outline";
 import React, { useState } from "react";
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -7,17 +8,16 @@ function OrderTrack() {
   const [step, setStep] = useState(1);
 
   return (
-    <div className="mt-10 rounded-xl p-8  overflow-hidden  shadow-lg max-w-2xl w-full mx-auto">
+    <div className="mt-10 rounded-xl p-8  overflow-hidden  shadow-lg max-w-xl w-full mx-auto">
       <div className=" space-y-6">
         <div className="flex items-center">
           <p className="text-orangePrimery text-xs font-normal">Home</p>
-          <span class="material-symbols-outlined text-gray-400">
+          <ChevronRightIcon className="w-4 text-gray-500" />
+          {/* <span class="material-symbols-outlined text-gray-400">
             chevron_right
-          </span>
+          </span> */}
           <p className="text-orangePrimery text-xs font-normal">Orders</p>
-          <span class="material-symbols-outlined text-gray-400">
-            chevron_right
-          </span>
+          <ChevronRightIcon className="w-4 text-gray-500" />
           <p className="text-black text-xs font-normal">ID 3352655445</p>
         </div>
         <div className="flex justify-between">
@@ -36,8 +36,8 @@ function OrderTrack() {
                 onClick={() => setStep(1)}
                 className={classNames(
                   step === 1 || step === 2 || step === 3 || step === 4
-                    ? "bg-red-600 text-white"
-                    : "bg-black text-gray-500",
+                    ? "bg-blue-600 text-white"
+                    : "bg-blue text-gray-500",
                   "w-5 h-5 text-sm rounded-full flex justify-center items-center"
                 )}
               >
@@ -46,9 +46,9 @@ function OrderTrack() {
               <div
                 className={classNames(
                   step === 2 || step === 3
-                    ? "bg-blue-800 text-white"
-                    : "bg-gray-200 text-gray-500",
-                  "h-1 w-40 bg-bluePrimary"
+                    ? "bg-blue-600 text-white"
+                    : "bg-blue-200 text-gray-500",
+                  "h-1 w-32 bg-bluePrimary"
                 )}
               />
             </div>
@@ -57,8 +57,8 @@ function OrderTrack() {
                 onClick={() => setStep(2)}
                 className={classNames(
                   step === 2 || step === 3
-                    ? "bg-yellow-200 text-white"
-                    : "bg-green-800 text-gray-500",
+                    ? "bg-blue-600 text-white"
+                    : "bg-blue-600 text-white",
                   "w-5 h-5 text-sm rounded-full flex justify-center items-center"
                 )}
               >
@@ -67,9 +67,9 @@ function OrderTrack() {
               <div
                 className={classNames(
                   step === 3 || step === 4
-                    ? "bg-pink-700 text-white"
-                    : "bg-gray-200 text-gray-500",
-                  "h-1 w-40 bg-bluePrimary"
+                    ? "bg-blue-600 text-white"
+                    : "bg-blue-200 text-gray-500",
+                  "h-1 w-32 bg-bluePrimary"
                 )}
               />
             </div>
@@ -78,8 +78,8 @@ function OrderTrack() {
                 onClick={() => setStep(3)}
                 className={classNames(
                   step === 3
-                    ? "bg-orange-700 text-white"
-                    : "bg-green-500 text-gray-500",
+                    ? "bg-blue-600 text-white"
+                    : "bg-blue-600 text-white",
                   "w-5 h-5 text-sm rounded-full flex justify-center items-center"
                 )}
               >
@@ -88,9 +88,9 @@ function OrderTrack() {
               <div
                 className={classNames(
                   step === 3
-                    ? "bg-black text-white"
-                    : "bg-gray-200 text-gray-500",
-                  "h-1 w-40 bg-bluePrimary"
+                    ? "bg-blue-600 text-white"
+                    : "bg-blue-200 text-gray-500",
+                  "h-1 w-32 bg-bluePrimary"
                 )}
               />
             </div>
@@ -99,8 +99,8 @@ function OrderTrack() {
                 onClick={() => setStep(4)}
                 className={classNames(
                   step === 4
-                    ? "bg-orange-700 text-white"
-                    : "bg-green-500 text-gray-500",
+                    ? "bg-blue-600 text-white"
+                    : "bg-blue-600 text-white",
                   "w-5 h-5 text-sm rounded-full flex justify-center items-center"
                 )}
               >
