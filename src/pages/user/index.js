@@ -7,6 +7,7 @@ import UserOrders from "@/components/Tables/Users/UserOrders";
 import Pet from "@/components/Tables/Users/pet";
 import React, { useState } from "react";
 import Support from "../support";
+import SupportGridCard from "@/components/SupportGridCard";
 
 const tabs = [
   {
@@ -24,6 +25,48 @@ const tabs = [
   {
     name: "Support",
     value: 4,
+  },
+];
+const data = [
+  {
+    image: "/images/Account.svg",
+    name: "Tom Cook",
+    email: "@tom_cook",
+    date: "21st July 2023",
+    para: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.",
+    buton: "Resolve",
+  },
+  {
+    image: "/images/Account.svg",
+    name: "Tom Cook",
+    email: "@tom_cook",
+    date: "21st July 2023",
+    para: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.",
+    buton: "Resolve",
+  },
+  {
+    image: "/images/Account.svg",
+    name: "Tom Cook",
+    email: "@tom_cook",
+    date: "21st July 2023",
+    para: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.",
+    buton: "Resolve",
+  },
+  {
+    image: "/images/Account.svg",
+    name: "Tom Cook",
+    email: "@tom_cook",
+    date: "21st July 2023",
+    para: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.",
+    buton: "Resolve",
+  },
+  {
+    image: "/images/Account.svg",
+    name: "Tom Cook",
+    email: "@tom_cook",
+    date: "21st July 2023",
+    para: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.",
+    buton: "Resolve",
   },
 ];
 
@@ -44,7 +87,7 @@ function index() {
           ]}
         />
         <Heading title={"Stakeholder Management"} />
-        <div className="flex w-full rounded-xl md:w-3/5 my-5 text-sm text-gray-500 font-medium">
+        <div className="flex w-full rounded-xl overflow-x-scroll md:overflow-x-hidden md:w-3/5 my-5 text-sm text-gray-500 font-medium">
           {tabs.map((item) => (
             <div
               onClick={() => handelOnClick(item.value)}
@@ -72,7 +115,7 @@ function index() {
         ) : tab === 3 ? (
           <Pet />
         ) : (
-          <Support />
+          <SupportGridCard supportTickets={data} />
         )}
       </div>
     </>

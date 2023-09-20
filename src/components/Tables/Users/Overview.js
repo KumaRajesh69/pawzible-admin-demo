@@ -31,9 +31,11 @@ const data = [
 function Overview() {
   return (
     <div>
-      <HolderManager />
+      <div className="">
+        <HolderManager />
+      </div>
       <div className="flex flex-col">
-        <div className="grid grid-cols-5 space-x-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-3 ">
           {data.map((item) => (
             <div>
               <p className="text-gray-600 font-normal text-lg">{item.name}</p>

@@ -36,7 +36,7 @@ function PersonalInfo() {
   return (
     <div>
       <HolderManager />
-      <div className="grid grid-cols-5 gap-4 mx-5">
+      <div className="grid md:grid-cols-5 gap-4 mx-5">
         {data.map((each) => (
           <div>
             <p className="text-gray-600">{each.name}</p>

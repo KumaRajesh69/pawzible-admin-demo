@@ -30,7 +30,7 @@ const data = [
 
 function Blog() {
   return (
-    <div className="grid grid-cols-3">
+    <div className="grid md:grid-cols-3">
       {data.map((each) => (
         <div className="space-y-2 p-2 shadow-md">
           <div>

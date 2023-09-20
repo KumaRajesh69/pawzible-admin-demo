@@ -3,8 +3,8 @@ import React from "react";
 function DetailsBlog() {
   return (
     <>
-      <div className="my-10 mx-5 ">
-        <div className="space-y-3 w-3/4">
+      <div className="my-10  ">
+        <div className="space-y-3 md:w-3/4">
           <div className="rounded-md shadow-md">
             <img src="/images/blog4.svg" />
           </div>
@@ -27,11 +27,11 @@ function DetailsBlog() {
               </div>
             </div>
           </div>
-          <div className="flex items-center space-x-3 p-2 shadow-md rounded-lg">
-            <div className="h-12 w-12 rounded-full flex justify-center items-center ">
+          <div className="flex  md:items-center space-x-3 p-2 shadow-md rounded-lg">
+            <div className="h-12 w-12 rounded-full md:flex justify-center items-center ">
               <img
                 src="/images/ram-image.svg"
-                className="w-full h-full rounded-full"
+                className="w-full h-full rounded-full "
               />
             </div>
             <div className="flex-1">
@@ -116,7 +116,7 @@ function DetailsBlog() {
                   </p>
                 </div>
               </div>
-              <button className="bg-orangePrimery text-white h-10 w-1/3 rounded">
+              <button className="bg-orangePrimery text-white h-10 md:w-1/3 rounded p-2 md:p-0">
                 Post Comment
               </button>
             </div>

@@ -111,7 +111,7 @@ function index() {
           ]}
         />
         <Heading title={"Stakeholder Management"} />
-        <div className="flex w-full rounded-xl md:w-lg my-5 text-sm text-gray-500 font-medium">
+        <div className="flex w-full overflow-x-scroll md:overflow-x-hidden rounded-xl md:w-lg my-5 text-sm text-gray-500 font-medium">
           {tabs.map((item) => (
             <div
               onClick={() => handelOnClick(item.value)}

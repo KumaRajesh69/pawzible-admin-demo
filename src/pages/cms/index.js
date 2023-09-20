@@ -70,8 +70,8 @@ function cms() {
 
       <Heading title={"CMS"} />
       {/* <Cms table={cmsData} /> */}
-      <div className="flex justify-between">
-        <div className="flex w-full rounded-xl md:w-3/5 my-5 text-sm text-gray-500 font-medium">
+      <div className="md:flex justify-between">
+        <div className="flex overflow-x-scroll md:overflow-x-hidden w-full rounded-xl md:w-3/5 mt-5 text-sm text-gray-500 font-medium">
           <button
             onClick={() => handelOnClick(1)}
             className={` ${

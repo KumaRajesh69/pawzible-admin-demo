@@ -5,7 +5,7 @@ function OverView() {
   return (
     <div>
       <HolderManager />
-      <div className="m-4 rounded-lg shadow-2xl p-4">
+      <div className=" rounded-lg shadow-2xl p-4">
         <p>
           Surveillance based mass dog vaccination is the best tool that we can
           adopt to control rabies in India. For achieving good surveillance of

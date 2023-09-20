@@ -3,9 +3,9 @@ import React from "react";
 function Wallet() {
   return (
     <>
-      <div className="my-10 mx-5">
-        <div className=" w-full  shadow-md rounded-lg bg-white p-10">
-          <div className="flex justify-between">
+      <div className="my-10 ">
+        <div className=" w-full  shadow-md rounded-lg bg-white p-5 md:p-10">
+          <div className="md:flex justify-between space-y-5 md:space-y-0">
             <div className=" space-y-5">
               <p className="text-lg text-gray-400 font-normal">
                 Total earnings
@@ -28,8 +28,8 @@ function Wallet() {
           <div className="bg-gray-200 w-full py-1 px-4 rounded-md">
             <p className="text-xs font-normal">25 Feb 2023</p>
           </div>
-          <div className="grid grid-cols-3 gap-3">
-            <div className="shadow-lg rounded-lg p-2 flex items-center">
+          <div className="grid md:grid-cols-3 gap-3">
+            <div className="shadow-md rounded-lg p-2 flex items-center">
               <div className="h-10 w-12 rounded-md bg-orange-300 flex justify-center items-center ">
                 CM
               </div>

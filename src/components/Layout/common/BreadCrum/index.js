@@ -9,7 +9,9 @@ const BreadCrum = ({ data }) => {
         {data.map((item, index) => (
           <div key={index} className="flex space-x-2 items-center">
             <Link href={item.href} legacyBehavior>
-              <a className="text-gray-500">{item.name} </a>
+              <a className=" text-xs md:text-base text-gray-500">
+                {item.name}{" "}
+              </a>
             </Link>
             {index !== data.length - 1 ? (
               <ChevronRightIcon className="w-4 text-gray-500" />

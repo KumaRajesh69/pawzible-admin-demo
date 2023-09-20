@@ -262,8 +262,8 @@ function StakeholderManagement() {
           ]}
         />
         <Heading title={"Stakeholder Management"} />
-        <div className="flex justify-between">
-          <div className="flex w-full rounded-xl md:w-3/5 my-5 text-sm text-gray-500 font-medium">
+        <div className="md:flex justify-between">
+          <div className="flex w-full rounded-xl overflow-x-scroll md:overflow-x-hidden md:w-3/5 mt-5 text-sm text-gray-500 font-medium">
             <button
               onClick={() => handelOnClick(1)}
               className={` ${
@@ -307,7 +307,7 @@ function StakeholderManagement() {
           </div>
           {tab === 1 && (
             <button
-              className="bg-orangePrimery rounded-md my-5 text-white font-medium p-2 "
+              className="bg-orangePrimery rounded-md my-5 text-xs md:text-base text-white font-medium p-2 "
               onClick={() => setIsOpen(true)}
             >
               Register New User

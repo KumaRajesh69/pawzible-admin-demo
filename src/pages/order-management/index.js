@@ -174,8 +174,8 @@ function OrderManagement() {
         ]}
       />
       <Heading title={"Order Management"} />
-      <div className="flex w-full justify-between items-center">
-        <div className="flex w-full rounded-xl md:w-3/5 my-5 text-sm text-gray-500 font-medium">
+      <div className="md:flex w-full justify-between items-center">
+        <div className="flex overflow-x-scroll md:overflow-x-hidden w-full rounded-xl md:w-3/5 my-5 text-sm text-gray-500 font-medium">
           <button
             className={` ${
               tab === 1
@@ -218,7 +218,7 @@ function OrderManagement() {
           </button>
         </div>
         <div className="">
-          <Menu as="div" className="ml-3 relative">
+          <Menu as="div" className=" relative">
             <div>
               <Menu.Button className="max-w-xs bg-white flex items-center outline-none text-sm  focus:outline-none ">
                 <span className="sr-only">Open user menu</span>

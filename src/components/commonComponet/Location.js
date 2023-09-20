@@ -4,7 +4,7 @@ function Location() {
   return (
     <>
       <div className="my-10 mx-5">
-        <div className="flex justify-between">
+        <div className="md:flex justify-between">
           <div>
             <p className="text-gray-400">Address</p>
             <p className="w-3/4">

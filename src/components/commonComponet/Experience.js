@@ -2,7 +2,7 @@ import React from "react";
 
 function Experience() {
   return (
-    <div className="m-5 rounded-lg shadow-2xl p-4">
+    <div className="   rounded-lg shadow-2xl p-4">
       <div>
         <p>Experience:</p>
         <p>
@@ -19,9 +19,9 @@ function Experience() {
       </div>
       <div className="my-10">
         <p className="my-3">Professional Experience:</p>
-        <div className="grid grid-cols-4">
+        <div className="grid md:grid-cols-4">
           <div className=" ">
-            <div className="h-1 w-full bg-blue-600"></div>
+            <div className="h-1 hidden md:block w-full bg-blue-600"></div>
             <div className="h-5 w-5 rounded-full bg-blue-600 mx-auto -mt-3 "></div>
             <div className="h-10 w-1 bg-blue-600 mx-auto"></div>
             <div className="h-36 w-11/12 rounded-lg shadow-lg flex flex-col space-y-2 justify-center items-center ">
@@ -33,7 +33,7 @@ function Experience() {
             </div>
           </div>
           <div className=" ">
-            <div className="h-1 w-full bg-blue-600"></div>
+            <div className="h-1 w-full hidden md:block bg-blue-600"></div>
             <div className="h-5 w-5 rounded-full bg-blue-600 mx-auto -mt-3 "></div>
             <div className="h-10 w-1 bg-blue-600 mx-auto"></div>
             <div className="h-36 w-11/12 rounded-lg shadow-lg flex flex-col space-y-2 justify-center items-center ">
@@ -45,7 +45,7 @@ function Experience() {
             </div>
           </div>
           <div className=" ">
-            <div className="h-1 w-full bg-blue-600"></div>
+            <div className="h-1 w-full hidden md:block bg-blue-600"></div>
             <div className="h-5 w-5 rounded-full bg-blue-600 mx-auto -mt-3 "></div>
             <div className="h-10 w-1 bg-blue-600 mx-auto"></div>
             <div className="h-36 w-11/12 rounded-lg shadow-lg flex flex-col space-y-2 justify-center items-center ">
@@ -57,7 +57,7 @@ function Experience() {
             </div>
           </div>
           <div className=" ">
-            <div className="h-1 w-full bg-blue-600"></div>
+            <div className="h-1 w-full hidden md:block bg-blue-600"></div>
             <div className="h-5 w-5 rounded-full bg-blue-600 mx-auto -mt-3 "></div>
             <div className="h-10 w-1 bg-blue-600 mx-auto"></div>
             <div className="h-36 w-11/12 rounded-lg shadow-lg flex flex-col space-y-2 justify-center items-center ">

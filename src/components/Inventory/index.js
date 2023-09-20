@@ -10,22 +10,22 @@ function Inventory({ table }) {
 
   return (
     <div>
-      <div className="h-full mb-20 mt-5 rounded-xl overflow-x-scroll md:overflow-x-hidden shadow-lg bg-white">
-        <div className="flex p-5">
-          <p className="flex flex-1 text-xl font-medium">Products</p>
-          <div className="flex space-x-6">
-            <button
-              className="bg-orangePrimery p-2 rounded-md text-white"
-              onClick={() => setIsOpen(true)}
-            >
-              Add Product
-            </button>
-            <button className="p-2 rounded-md border flex space-x-2 text-stone-500">
-              <AdjustmentsIcon className="rotate-90 h-5" />
-              <p>Filters</p>
-            </button>
-          </div>
+      <div className="md:flex mt-5">
+        <p className="flex flex-1 text-xl font-medium">Products</p>
+        <div className="flex space-x-6 mt-3 md:mt-0">
+          <button
+            className="bg-orangePrimery p-2 rounded-md text-white"
+            onClick={() => setIsOpen(true)}
+          >
+            Add Product
+          </button>
+          <button className="p-2 rounded-md border flex space-x-2 text-stone-500">
+            <AdjustmentsIcon className="rotate-90 h-5" />
+            <p>Filters</p>
+          </button>
         </div>
+      </div>
+      <div className="h-full mb-20 mt-5 rounded-xl overflow-x-scroll md:overflow-x-hidden shadow-lg bg-white">
         <table className="w-full">
           <thead className="bg-blue-200 h-10 rounded-t-xl ">
             <tr className="text-left ">

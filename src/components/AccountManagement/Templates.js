@@ -78,7 +78,7 @@ function Templates() {
           Create a new template
         </button>
       </div>
-      <div className="grid grid-cols-3 gap-4 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
         {data.map(() => (
           <div className="bg-white w-full rounded-lg shadow-lg">
             <div className="p-5">

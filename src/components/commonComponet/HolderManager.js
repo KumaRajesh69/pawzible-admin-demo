@@ -3,23 +3,23 @@ import React from "react";
 function HolderManager() {
   return (
     <>
-      <div className="mx-5 my-8">
-        <div className="flex items-center  rounded-xl overflow-hidden  shadow-lg  w-full h-44 space-x-3">
-          <div class="p-4 flex ">
+      <div className=" my-8 ">
+        <div className="md:flex items-center  rounded-xl  shadow-lg  w-full md:h-44 h-full space-x-3 space-y-3">
+          <div class="p-4 flex justify-center items-center">
             <img
               src="/images/Ellipse5.svg"
               alt="person"
               class="rounded-full shadow-md"
             />
           </div>
-          <div className="flex items-end space-x-5 flex-1">
+          <div className="md:flex items-end md:space-x-5 flex-1">
             <div className="space-y-5 ">
               <p className="text-xl font-normal">Good Morning,</p>
               <p className="text-3xl font-medium text-orangePrimery">
                 Ethel Howard
               </p>
             </div>
-            <div className="flex space-x-1">
+            <div className="flex space-x-1 mt-2 md:mt-0">
               <img className="" src="/images/location.svg" />
               <p className="text-gray-700 text-base font-normal">
                 Mumbai,India

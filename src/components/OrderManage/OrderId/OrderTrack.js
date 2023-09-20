@@ -4,18 +4,43 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
+const data = [
+  {
+    name: "Pedigree",
+    subname: "Chicken & Vegetables",
+    supplement: "Dietary Fibre",
+    kilo: "1 Kg",
+    price: "₹1,599.00 ",
+    qty: "Oty: 1",
+  },
+  {
+    name: "Royal Cannin",
+    subname: "Health Nutrition",
+    supplement: "Digestive Security",
+    kilo: "1 kg",
+    price: "₹1,599.00",
+    qty: "Oty: 1",
+  },
+  {
+    name: "ZealBoost",
+    subname: "Vitamins",
+    supplement: "Supplement",
+    kilo: "200 ml",
+    price: "₹1,599.00",
+    qty: "Oty: 1",
+  },
+];
+
 function OrderTrack() {
   const [step, setStep] = useState(1);
 
   return (
-    <div className="mt-10 rounded-xl p-8  overflow-hidden  shadow-lg max-w-xl w-full mx-auto">
+    <div className="mt-10 rounded-xl p-4 md:p-8  overflow-hidden  shadow-lg max-w-xl w-full mx-auto">
       <div className=" space-y-6">
         <div className="flex items-center">
           <p className="text-orangePrimery text-xs font-normal">Home</p>
           <ChevronRightIcon className="w-4 text-gray-500" />
-          {/* <span class="material-symbols-outlined text-gray-400">
-            chevron_right
-          </span> */}
+
           <p className="text-orangePrimery text-xs font-normal">Orders</p>
           <ChevronRightIcon className="w-4 text-gray-500" />
           <p className="text-black text-xs font-normal">ID 3352655445</p>
@@ -29,8 +54,8 @@ function OrderTrack() {
             <p className="text-sm">Track order</p>
           </div>
         </div>
-        <div>
-          <div className="mx-auto w-max flex">
+        <div className="overflow-x-scroll md:overflow-x-hidden">
+          <div className="mx-auto w-max flex ">
             <div className="flex items-center">
               <div
                 onClick={() => setStep(1)}
@@ -109,77 +134,36 @@ function OrderTrack() {
             </div>
           </div>
         </div>
-        <div className="flex  space-x-5">
-          <div className="w-16 h-16 rounded-md bg-gray-300"></div>
-          <div className="flex flex-col justify-between flex-1">
-            <p className="font-normal text-xl">Pedigree</p>
-            <div className="flex">
-              <p className="text-sm font-normal text-gray-500 ">
-                Chicken & Vegetables
+        {data.map((each) => (
+          <div className="md:flex  md:space-x-5 space-y-3 md:space-y-0">
+            <div className="w-16 h-16 rounded-md bg-gray-300"></div>
+            <div className="flex flex-col justify-between flex-1">
+              <p className="font-normal text-xl">{each.name}</p>
+              <div className="flex">
+                <p className="text-sm font-normal text-gray-500 ">
+                  {each.subname}
+                </p>
+                <div class="border-l border-gray-400 mx-4"></div>
+                <p className="text-xs font-normal text-gray-500 ">
+                  {each.supplement}
+                </p>
+                <div class="border-l border-gray-400 mx-4"></div>
+                <p className="text-xs font-normal text-gray-500 ">
+                  {each.kilo}
+                </p>
+              </div>
+            </div>
+            <div className=" flex flex-col justify-end items-end">
+              <p className="text-orangePrimery text-xl font-semibold">
+                {each.price}
               </p>
-              <div class="border-l border-gray-400 mx-4"></div>
-              <p className="text-xs font-normal text-gray-500 ">
-                Digestive Security
-              </p>
-              <div class="border-l border-gray-400 mx-4"></div>
-              <p className="text-xs font-normal text-gray-500 ">1 Kg</p>
+              <p className="font-normal text-base text-gray-700">{each.qty}</p>
             </div>
           </div>
-          <div className=" flex flex-col justify-end items-end">
-            <p className="text-orangePrimery text-xl font-semibold">
-              $1,599.00
-            </p>
-            <p className="font-normal text-base text-gray-700">Oty:1</p>
-          </div>
-        </div>
-        <div className="flex  space-x-5">
-          <div className="w-16 h-16 rounded-md bg-gray-300"></div>
-          <div className="flex flex-col justify-between flex-1">
-            <p className="font-normal text-xl">Pedigree</p>
-            <div className="flex">
-              <p className="text-sm font-normal text-gray-500 ">
-                Chicken & Vegetables
-              </p>
-              <div class="border-l border-gray-400 mx-4"></div>
-              <p className="text-xs font-normal text-gray-500 ">
-                Digestive Security
-              </p>
-              <div class="border-l border-gray-400 mx-4"></div>
-              <p className="text-xs font-normal text-gray-500 ">1 Kg</p>
-            </div>
-          </div>
-          <div className=" flex flex-col justify-end items-end">
-            <p className="text-orangePrimery text-xl font-semibold">
-              $1,599.00
-            </p>
-            <p className="font-normal text-base text-gray-700">Oty:1</p>
-          </div>
-        </div>
-        <div className="flex  space-x-5">
-          <div className="w-16 h-16 rounded-md bg-gray-300"></div>
-          <div className="flex flex-col justify-between flex-1">
-            <p className="font-normal text-xl">Pedigree</p>
-            <div className="flex">
-              <p className="text-sm font-normal text-gray-500 ">
-                Chicken & Vegetables
-              </p>
-              <div class="border-l border-gray-400 mx-4"></div>
-              <p className="text-xs font-normal text-gray-500 ">
-                Digestive Security
-              </p>
-              <div class="border-l border-gray-400 mx-4"></div>
-              <p className="text-xs font-normal text-gray-500 ">1 Kg</p>
-            </div>
-          </div>
-          <div className=" flex flex-col justify-end items-end">
-            <p className="text-orangePrimery text-xl font-semibold">
-              $1,599.00
-            </p>
-            <p className="font-normal text-base text-gray-700">Oty:1</p>
-          </div>
-        </div>
+        ))}
+
         <div class="border-t border-gray-300 my-4"></div>
-        <div className="grid grid-cols-2 gap-x-4">
+        <div className="grid md:grid-cols-2 gap-4">
           <div>
             <p className="text-xl font-medium text-black">Delivery Agent</p>
             <div className="flex space-x-2 items-center py-2">
@@ -203,7 +187,7 @@ function OrderTrack() {
             </div>
           </div>
           <div className="w-full flex justify-end ">
-            <div className="w-3/4">
+            <div className="md:w-3/4">
               <p className=" w-max text-xl font-medium text-black">
                 Delivery Address
               </p>
@@ -226,7 +210,7 @@ function OrderTrack() {
           </div>
         </div>
         <div class="border-t border-gray-300 my-4"></div>
-        <div className="grid grid-cols-2">
+        <div className="grid md:grid-cols-2">
           <div>
             <p className="font-medium text-lg ">Need Help</p>
             <div className="flex items-center space-x-1">

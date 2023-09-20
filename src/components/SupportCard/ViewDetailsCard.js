@@ -51,7 +51,7 @@ function ViewDetailsCard({ isOpen, setIsOpen }) {
             </div>
           ))}
         </div>
-        <div className="mt-10 flex justify-between">
+        <div className="mt-10 flex flex-col md:flex-row space-y-3 md:space-y-0 justify-between">
           <button className="border border-black rounded-lg px-10 py-2">
             Call
           </button>

@@ -48,7 +48,7 @@ function TermCondition({ isOpen, setIsOpen }) {
         </div>
       </div>
       <div class="border-t-2 border-dashed border-gray-400 "></div>
-      <div className=" flex justify-between items-center w-full p-8 pt-20">
+      <div className=" flex justify-between items-center w-full p-4 md:p-8 md:pt-20">
         <button className="bg-transparent hover:bg-red-500 text-gray-500 font-semibold hover:text-white py-2 px-4 border border-black hover:border-transparent rounded w-40">
           Reject
         </button>
