@@ -70,12 +70,6 @@ function User({ table }) {
           </tbody>
         </table>
       </div>
-      {/* <div>
-        <StackHolder />
-        <RegisterCard />
-        <Overview />
-        <Pet />
-      </div> */}
     </div>
   );
 }

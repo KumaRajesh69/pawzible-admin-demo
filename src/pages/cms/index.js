@@ -2,6 +2,7 @@ import Cms from "@/components/Cms";
 import BreadCrum from "@/components/Layout/common/BreadCrum";
 import Heading from "@/components/Layout/common/Heading";
 import Location from "@/components/commonComponet/Location";
+import Review from "@/components/commonComponet/Review";
 import React, { useState } from "react";
 
 const cmsData = [
@@ -122,7 +123,7 @@ function cms() {
       ) : tab === 2 ? (
         <Cms table={cmsData} />
       ) : (
-        <Location />
+        <Review />
       )}
     </div>
   );

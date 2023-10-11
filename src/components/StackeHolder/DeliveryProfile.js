@@ -69,7 +69,6 @@ function DeliveryProfile() {
         </div>
         <p className="my-3">Documents Uploaded</p>
         <hr />
-
         <div>
           <p>Order History</p>
           <div>
