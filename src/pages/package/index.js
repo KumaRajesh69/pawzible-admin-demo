@@ -34,11 +34,11 @@ function index() {
               </button>
             )}
           </div>
-          {tab === 1 ? (
+          {/* {tab === 1 ? (
             <AccountManagement table={invoiceData} />
           ) : (
             <Templates />
-          )}
+          )} */}
         </div>
       </div>
     </div>
