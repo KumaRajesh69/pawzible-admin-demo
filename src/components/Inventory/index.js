@@ -15,9 +15,9 @@ function Inventory({ table }) {
         <div className="flex space-x-6 mt-3 md:mt-0">
           <button
             className="bg-orangePrimery p-2 rounded-md text-white"
-            onClick={() => setIsOpen(true)}
+            // onClick={() => setIsOpen(true)}
           >
-            Add Product
+            <a href={"/addproduct"}> Add Product </a>
           </button>
           <button className="p-2 rounded-md border flex space-x-2 text-stone-500">
             <AdjustmentsIcon className="rotate-90 h-5" />
@@ -56,9 +56,9 @@ function Inventory({ table }) {
                 <td>
                   <button
                     className="td_Button first-letter:"
-                    onClick={() => setDetailsOpen(true)}
+                    // onClick={() => setDetailsOpen(true)}
                   >
-                    {item.details}{" "}
+                    <a href={"/pedigiri"}>{item.details} </a>
                   </button>
                 </td>
               </tr>

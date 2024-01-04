@@ -39,7 +39,9 @@ function NewProduct({ isOpen, setIsOpen }) {
   // const [isOpen, setIsOpen] = useState(true);
 
   return (
-    <div className=" w-full max-w-lg rounded shadow-lg p-4">
+    // <div className=" w-full rounded shadow-lg p-4">
+    //   <form>
+    <div className=" w-full max-w-lg rounded shadow-lg p-4 my-10 bg-white">
       <form>
         <div>
           <p className="text-base font-medium">New Product</p>
@@ -78,7 +80,7 @@ function NewProduct({ isOpen, setIsOpen }) {
 
         <div className="flex justify-end space-x-5">
           <button
-            onClick={() => setIsOpen(false)}
+            // onClick={() => setIsOpen(false)}
             className="text-gray-500 py-2 px-4 rounded border focus:ring"
           >
             Discard

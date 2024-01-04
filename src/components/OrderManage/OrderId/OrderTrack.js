@@ -35,7 +35,7 @@ function OrderTrack() {
   const [step, setStep] = useState(1);
 
   return (
-    <div className="mt-10 rounded-xl p-4 md:p-8  overflow-hidden  shadow-lg max-w-xl w-full mx-auto">
+    <div className="my-2 rounded-xl p-4 md:p-8  overflow-hidden  shadow-lg max-w-xl w-full mx-auto">
       <div className=" space-y-6">
         <div className="flex items-center">
           <p className="text-orangePrimery text-xs font-normal">Home</p>

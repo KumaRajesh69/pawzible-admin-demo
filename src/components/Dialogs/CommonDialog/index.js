@@ -10,7 +10,7 @@ const CommonDialog = ({ isOpen, setIsOpen, children }) => {
     <Transition show={isOpen} as={React.Fragment}>
       <Dialog
         as="div"
-        className="fixed inset-0 z-10 overflow-y-auto"
+        className="fixed inset-0 my-6 z-10 overflow-y-auto"
         onClose={closeDialog}
       >
         <div className="min-h-screen px-4 text-center">

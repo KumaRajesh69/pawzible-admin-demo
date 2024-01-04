@@ -5,7 +5,7 @@ function RegisterCard({ isOpen, setIsOpen }) {
   return (
     <div>
       {" "}
-      <div className="mt-10  rounded-xl overflow-hidden  shadow-lg max-w-2xl w-full mx-auto">
+      <div className=" rounded-xl overflow-hidden  shadow-lg max-w-2xl w-full mx-auto">
         <div className="py-4 border-b px-8">
           <div className="flex flex-row justify-between ">
             <p className="text-xl font-bold">Register new user</p>

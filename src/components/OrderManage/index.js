@@ -44,8 +44,12 @@ function OrderManage({ table }) {
                 </td>
                 <td className="table__body__text">{item.price}</td>
                 <td className="text-center ">
-                  <button className=" " onClick={() => setIsOpen(true)}>
-                    <img src={item.track} />
+                  <button
+                  // onClick={() => setIsOpen(true)}
+                  >
+                    <a href={"/ordertrackpage"}>
+                      <img src={item.track} />
+                    </a>
                   </button>
                 </td>
                 <td>
@@ -58,9 +62,9 @@ function OrderManage({ table }) {
         {/* </div> */}
       </div>
 
-      <CommonDialog isOpen={isOpen} setIsOpen={setIsOpen}>
+      {/* <CommonDialog isOpen={isOpen} setIsOpen={setIsOpen}>
         <OrderTrack />
-      </CommonDialog>
+      </CommonDialog> */}
     </div>
   );
 }

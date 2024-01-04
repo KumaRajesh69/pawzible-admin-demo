@@ -184,18 +184,19 @@ function OrderManagement() {
             } `}
             onClick={() => handelOnClick(1)}
           >
-            User
+            Today
           </button>
           <button
             onClick={() => handelOnClick(2)}
             className={` ${
               tab === 2
                 ? " flex-1 p-3   shadow-lg border-b-4 border-b-orangePrimery"
-                : " flex-1 p-3  shadow-lg "
+                : " flex-1 p-3  shadow-lg"
             } `}
           >
-            Delivery Agent
+            Upcoming
           </button>
+
           <button
             onClick={() => handelOnClick(3)}
             className={` ${
@@ -204,17 +205,7 @@ function OrderManagement() {
                 : " flex-1 p-3 rounded-r-lg  shadow-lg "
             } `}
           >
-            Veterinary Doctors
-          </button>{" "}
-          <button
-            onClick={() => handelOnClick(4)}
-            className={` ${
-              tab === 4
-                ? " flex-1 p-3 rounded-r-lg  shadow-lg border-b-4 border-b-orangePrimery"
-                : " flex-1 p-3 rounded-r-lg  shadow-lg "
-            } `}
-          >
-            Service Providers
+            Past
           </button>
         </div>
         <div className="">
@@ -241,22 +232,21 @@ function OrderManagement() {
                 <Menu.Item>
                   {({ active }) => (
                     <button className="block" onClick={() => setTab2(1)}>
-                      {" "}
-                      Today
+                      Delivery Agent
                     </button>
                   )}
                 </Menu.Item>
                 <Menu.Item>
                   {({ active }) => (
                     <button className="block" onClick={() => setTab2(2)}>
-                      Upcoming
+                      Veterinary Doctors
                     </button>
                   )}
                 </Menu.Item>
                 <Menu.Item>
                   {({ active }) => (
                     <button className="block" onClick={() => setTab2(3)}>
-                      Past
+                      Service Providers
                     </button>
                   )}
                 </Menu.Item>

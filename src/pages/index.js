@@ -1,3 +1,6 @@
+import VendorInvoice from "@/components/AccountManagement/VendorInvoice";
+import CommonDialog from "@/components/Dialogs/CommonDialog";
+import Otp from "@/components/OtpPage/Otp";
 import { Inter } from "next/font/google";
 import { useRouter } from "next/router";
 import { useState } from "react";
@@ -7,6 +10,13 @@ const inter = Inter({ subsets: ["latin"] });
 function Home() {
   const [data, setData] = useState();
   const router = useRouter();
+
+  // const [tab, setTab] = useState(1);
+  // const [isOpen, setIsOpen] = useState(false);
+
+  // const handelOnClick = (number) => {
+  //   setTab(number);
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -36,7 +46,7 @@ function Home() {
         </div>
         <div className="flex justify-center items-center w-full bg-slate-50">
           <div className=" p-10 w-full max-w-lg">
-            <div className="text-center space-y-2">
+            <div className="text-center space-y-1">
               <p className="text-xl font-semibold text-black">
                 Welcome to Pawzible
               </p>
@@ -48,56 +58,61 @@ function Home() {
             <div>
               <div>
                 <form onSubmit={handleSubmit}>
-                  <div className="my-4">
-                    <label for="username" className=" text-lg  text-gray-600">
-                      Email Address
-                    </label>
-                    <input
-                      type="text"
-                      id="username"
-                      name="username"
-                      placeholder="Enter Your Email"
-                      className="mt-1 p-2 border w-full rounded-xl focus:outline-none focus:ring focus:ring-orange-200"
-                    ></input>
-                  </div>
-
-                  <div className="mb-4">
-                    <label
-                      for="password"
-                      className="block text-lg  text-gray-600"
-                    >
-                      Password
-                    </label>
-                    <input
-                      type="password"
-                      id="password"
-                      name="password"
-                      placeholder="Enter Password"
-                      className="mt-1 p-2 border w-full rounded-xl focus:outline-none  focus:ring focus:ring-orange-200"
-                    ></input>
+                  {/* <form> */}
+                  <div className="my-6">
+                    <div class="relative mb-6">
+                      <span class="absolute inset-y-0 bg-[#D9D9D9] rounded-s-2xl left-0 flex items-center border border-gray-400 px-3">
+                        <span class="text-gray-500 ">+91</span>
+                      </span>
+                      <input
+                        type="number"
+                        // appearance="none"
+                        className="w-full pl-16 pr-4 py-2 border rounded-2xl h-12 focus:outline-none focus:border-gray-400"
+                        placeholder="Enter Mobile No."
+                      />
+                    </div>
                   </div>
 
                   <button
+                    // onClick={() => setIsOpen(true)}
+                    // onClick={() => handelOnClick()}
                     type="submit"
-                    className="bg-orangePrimery w-full text-white
+                    className="bg-orangePrimery text-xl font-bold w-full text-white h-12
                      px-4 py-2 rounded-xl hover:bg-orange-400 focus:outline-none
-                      focus:ring focus:ring-orange-300"
+                      focus:ring focus:ring-orange-300 tracking-wider"
                   >
-                    Login
+                    OTP
                   </button>
                 </form>
               </div>
             </div>
-            <button></button>
+            <div class="flex items-center my-4 px-8 justify-center md:justify-start">
+              <input
+                type="checkbox"
+                id="rememberMe"
+                className="form-checkbox h-4 w-4 text-blue-500 rounded-2xl"
+              />
+              <label
+                for="rememberMe"
+                className="ml-2 text-base font-normal text-gray-700"
+              >
+                Remember me!
+              </label>
+            </div>
             <div>
               <p className="text-center">
                 By Using the app, you agree to
-                <span className="text-orangePrimery">Terms & Conditions.</span>
+                <span className="text-orangePrimery px-1">
+                  Terms & Conditions.
+                </span>
               </p>
             </div>
           </div>
         </div>
       </div>
+      {/* <CommonDialog isOpen={isOpen} setIsOpen={setIsOpen}>
+        <Otp isOpen={isOpen} setIsOpen={setIsOpen} />
+      </CommonDialog> */}
     </div>
   );
 }
