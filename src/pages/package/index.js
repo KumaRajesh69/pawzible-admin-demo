@@ -1,7 +1,75 @@
+import AccountManagement from "@/components/AccountManagement";
 import BreadCrum from "@/components/Layout/common/BreadCrum";
 import Heading from "@/components/Layout/common/Heading";
+import Otp from "@/components/OtpPage/Otp";
+import PackagePage from "@/components/Package";
 import React, { useState } from "react";
 
+const data = [
+  {
+    name: "Dog Walking",
+    subcategory1: "Nail clipping",
+    subcategory2: "Head Massage",
+    price: "₹20000",
+    discount: "₹2000",
+    add: "/images/ButtonEdit.svg",
+    dlt: "images/Buttontrash.svg",
+  },
+  {
+    name: "Dog Walking",
+    subcategory1: "Nail clipping",
+    subcategory2: "Head Massage",
+    price: "₹20000",
+    discount: "₹2000",
+    add: "/images/ButtonEdit.svg",
+    dlt: "images/Buttontrash.svg",
+  },
+  {
+    name: "Dog Walking",
+    subcategory1: "Nail clipping",
+    subcategory2: "Head Massage",
+    price: "₹20000",
+    discount: "₹2000",
+    add: "/images/ButtonEdit.svg",
+    dlt: "images/Buttontrash.svg",
+  },
+  {
+    name: "Dog Walking",
+    subcategory1: "Nail clipping",
+    subcategory2: "Head Massage",
+    price: "₹20000",
+    discount: "₹2000",
+    add: "/images/ButtonEdit.svg",
+    dlt: "images/Buttontrash.svg",
+  },
+  {
+    name: "Dog Walking",
+    subcategory1: "Nail clipping",
+    subcategory2: "Head Massage",
+    price: "₹20000",
+    discount: "₹2000",
+    add: "/images/ButtonEdit.svg",
+    dlt: "images/Buttontrash.svg",
+  },
+  {
+    name: "Dog Walking",
+    subcategory1: "Nail clipping",
+    subcategory2: "Head Massage",
+    price: "₹20000",
+    discount: "₹2000",
+    add: "/images/ButtonEdit.svg",
+    dlt: "images/Buttontrash.svg",
+  },
+  {
+    name: "Dog Walking",
+    subcategory1: "Nail clipping",
+    subcategory2: "Head Massage",
+    price: "₹20000",
+    discount: "₹2000",
+    add: "/images/ButtonEdit.svg",
+    dlt: "images/Buttontrash.svg",
+  },
+];
 function index() {
   const [tab, setTab] = useState(1);
 
@@ -14,31 +82,13 @@ function index() {
         <BreadCrum
           data={[
             { name: "Dashboard", href: "/dashboard" },
-            { name: "Account Management", href: "#" },
+            { name: "Packages", href: "#" },
           ]}
         />
-        {tab === 1 ? (
-          <Heading title={"Account Management"} />
-        ) : (
-          <Heading title={"Your Templates"} />
-        )}
+        <Heading title={"Packages"} />
 
         <div className="">
-          <div className="flex flex-row w-full justify-end">
-            {tab === 1 && (
-              <button
-                className="bg-orangePrimery rounded-md text-white font-medium p-2 "
-                onClick={() => handelOnClick(1)}
-              >
-                Your Templates
-              </button>
-            )}
-          </div>
-          {/* {tab === 1 ? (
-            <AccountManagement table={invoiceData} />
-          ) : (
-            <Templates />
-          )} */}
+          <PackagePage table={data} />
         </div>
       </div>
     </div>

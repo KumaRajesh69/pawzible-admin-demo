@@ -17,10 +17,9 @@ function OrderManage({ table }) {
         <table className="w-full">
           <thead className="bg-blue-200 h-10 rounded-t-xl ">
             <tr className="text-left ">
+              <th>Order ID</th>
               <th>Name</th>
-              <th>Payment ID</th>
-              <th>Category</th>
-              <th>Sub-category</th>
+              <th>Service</th>
               <th>Date & Time</th>
               <th>Price</th>
               <th>Track</th>
@@ -30,12 +29,13 @@ function OrderManage({ table }) {
           {table.map((item) => (
             <tbody className="w-full">
               <tr>
+                <td className="">{item.id}</td>
+
                 <td td className="td__Name">
                   {item.name}
                 </td>
-                <td className="">{item.payment}</td>
                 <td className="table__body__text">{item.category}</td>
-                <td className="table__body__text">{item.subcategory}</td>
+                {/* <td className="table__body__text">{item.subcategory}</td> */}
                 <td className="table__body__text">
                   <div>
                     <div> {item.date}</div>

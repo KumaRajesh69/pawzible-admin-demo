@@ -1,19 +1,3 @@
-/*
-  This example requires Tailwind CSS v2.0+ 
-  
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
 import { Fragment, useState } from "react";
 import { Dialog, Menu, Transition } from "@headlessui/react";
 import {
@@ -70,6 +54,11 @@ const navigation = [
     name: "Support",
     href: "/support",
     icon: "/images/menu/Technical Support.svg",
+  },
+  {
+    name: "Packages",
+    href: "/package",
+    icon: "/images/menu/giftpackage.svg",
   },
 ];
 const userNavigation = [

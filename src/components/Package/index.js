@@ -1,44 +1,46 @@
 import React from "react";
 
-function PackagePage() {
+function PackagePage({ table }) {
   return (
     <div>
       <div className="h-full my-5 rounded-xl overflow-x-scroll md:overflow-x-hidden shadow-lg ">
         <table className="w-full">
           <thead className="bg-blue-200 h-10 rounded-t-xl ">
             <tr className="text-left ">
-              <th>ID</th>
-              <th>Name</th>
-              <th>Payment ID</th>
-              <th>Phone</th>
-              <th>Product</th>
-              <th>Price</th>
               <th>Category</th>
-              <th>Invoice</th>
-              <th>Send Invoice</th>
+              <th>Sub-category</th>
+              <th>Price</th>
+              <th>Discount</th>
+              <th className="text-center">Action</th>
             </tr>
           </thead>
           {table.map((item) => (
             <tbody className="w-full">
               <tr>
-                <td>{item.id}</td>
                 <td td className="td__Name">
                   {item.name}
                 </td>
-                <td className="">{item.payment}</td>
-                <td className="table__body__text">{item.phone}</td>
-                <td className="table__body__text">{item.product}</td>
-                <td className="table__body__text">{item.price}</td>
-                <td className="table__body__text">{item.category}</td>
                 <td>
-                  <button className="td_Button">
-                    <img className="rounded-full" src={item.invoice} />
-                  </button>
+                  <div className="flex  space-x-2 text-lg font-normal text-[#6A6A6A]">
+                    <div className="border rounded-md p-0.5 px-1">
+                      {item.subcategory1}
+                    </div>{" "}
+                    <div className="border rounded-md p-0.5 px-1">
+                      {item.subcategory2}
+                    </div>
+                  </div>
                 </td>
+                <td className="">{item.price}</td>
+                <td className="text-[#6A6A6A]">{item.discount}</td>
                 <td>
-                  <button>
-                    <img className="rounded-full" src={item.sendinvoice} />
-                  </button>
+                  <div className="flex space-x-5 justify-center text-lg font-normal text-[#6A6A6A]">
+                    <button className="">
+                      <img src={item.add} />
+                    </button>{" "}
+                    <button className="">
+                      <img src={item.dlt} />
+                    </button>
+                  </div>
                 </td>
               </tr>
             </tbody>

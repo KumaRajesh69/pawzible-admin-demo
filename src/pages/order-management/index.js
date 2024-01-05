@@ -14,144 +14,134 @@ import React, { Fragment, useState } from "react";
 const orderManagementData = [
   {
     name: "Ethel Howard",
-    payment: "P1328SFFS001",
+    id: "P1328SFFS001",
     category: "Product",
     subcategory: "Pedigree",
     date: "Aug 12, 2023",
     time: "3:42pm",
     price: "1000 /-",
     track: "/images/eye.svg",
+    role: "user",
+    createdAt: "today",
     status: "Completed",
   },
   {
     name: "Devin Shelton",
-    payment: "P1328SFFS001",
+    id: "P1328SFFS001",
     category: "Services",
     subcategory: "Dog Walking",
     date: "Aug 12, 2023",
     time: "3:45pm",
     price: "1000 /-",
     track: "/images/eye.svg",
+    role: "delivery",
+    createdAt: "today",
     status: "Pending",
   },
   {
     name: "Devin Shelton",
-    payment: "P1328SFFS001",
+    id: "P1328SFFS001",
     category: "Product",
     subcategory: "Pedigree",
     date: "Aug 12, 2023",
     time: "3:50pm",
     price: "1000 /-",
     track: "/images/eye.svg",
+    role: "user",
+    createdAt: "upcoming",
     status: "Cancelled",
   },
   {
     name: "Devin Shelton",
-    payment: "P1328SFFS001",
+    id: "P1328SFFS001",
     category: "Services",
     subcategory: "Grooming",
     date: "Aug 12, 2023",
     time: "3:42pm",
     price: "1000 /-",
     track: "/images/eye.svg",
+    role: "doctor",
+    createdAt: "upcoming",
     status: "Ongoing",
   },
 
   {
     name: "Devin Shelton",
-    payment: "P1328SFFS001",
+    id: "P1328SFFS001",
     category: "Product",
     subcategory: "Pedigree",
     date: "Aug 12, 2023",
     time: "3:42pm",
     price: "1000 /-",
     track: "/images/eye.svg",
+    role: "user",
+    createdAt: "upcoming",
     status: "Completed",
   },
-];
-const orderManagementData2 = [
+  {
+    name: "Ethel Howard",
+    id: "P1328SFFS001",
+    category: "Product",
+    subcategory: "Pedigree",
+    date: "Aug 12, 2023",
+    time: "3:42pm",
+    price: "1000 /-",
+    track: "/images/eye.svg",
+    role: "user",
+    createdAt: "today",
+    status: "Completed",
+  },
   {
     name: "Devin Shelton",
-    payment: "P1328SFFS001",
+    id: "P1328SFFS001",
+    category: "Services",
+    subcategory: "Dog Walking",
+    date: "Aug 12, 2023",
+    time: "3:45pm",
+    price: "1000 /-",
+    track: "/images/eye.svg",
+    role: "user",
+    createdAt: "past",
+    status: "Pending",
+  },
+  {
+    name: "Devin Shelton",
+    id: "P1328SFFS001",
+    category: "Product",
+    subcategory: "Pedigree",
+    date: "Aug 12, 2023",
+    time: "3:50pm",
+    price: "1000 /-",
+    track: "/images/eye.svg",
+    role: "service",
+    createdAt: "today",
+    status: "Cancelled",
+  },
+  {
+    name: "Devin Shelton",
+    id: "P1328SFFS001",
     category: "Services",
     subcategory: "Grooming",
     date: "Aug 12, 2023",
     time: "3:42pm",
     price: "1000 /-",
     track: "/images/eye.svg",
+    role: "user",
+    createdAt: "past",
     status: "Ongoing",
   },
-  {
-    name: "Devin Shelton",
-    payment: "P1328SFFS001",
-    category: "Product",
-    subcategory: "Pedigree",
-    date: "Aug 12, 2023",
-    time: "3:42pm",
-    price: "1000 /-",
-    track: "/images/eye.svg",
-    status: "Completed",
-  },
-  {
-    name: "Devin Shelton",
-    payment: "P1328SFFS001",
-    category: "Product",
-    subcategory: "Pedigree",
-    date: "Aug 12, 2023",
-    time: "3:42pm",
-    price: "1000 /-",
-    track: "/images/eye.svg",
-    status: "Completed",
-  },
-];
-const orderManagementData3 = [
-  {
-    name: "Devin Shelton",
-    payment: "P1328SFFS001",
-    category: "Product",
-    subcategory: "Pedigree",
-    date: "Aug 12, 2023",
-    time: "3:42pm",
-    price: "1000 /-",
-    track: "/images/eye.svg",
-    status: "Completed",
-  },
-  {
-    name: "Devin Shelton",
-    payment: "P1328SFFS001",
-    category: "Product",
-    subcategory: "Pedigree",
-    date: "Aug 12, 2023",
-    time: "3:42pm",
-    price: "1000 /-",
-    track: "/images/eye.svg",
-    status: "Completed",
-  },
-];
-const orderManagementData4 = [
-  {
-    name: "Devin Shelton",
-    payment: "P1328SFFS001",
-    category: "Product",
-    subcategory: "Pedigree",
-    date: "Aug 12, 2023",
-    time: "3:42pm",
-    price: "1000 /-",
-    track: "/images/eye.svg",
-    status: "Completed",
-  },
-];
 
-const userTabledata = [
   {
-    name: "user",
-    payment: "P1328SFFS001",
+    name: "Devin Shelton",
+    id: "P1328SFFS001",
     category: "Product",
     subcategory: "Pedigree",
     date: "Aug 12, 2023",
     time: "3:42pm",
     price: "1000 /-",
     track: "/images/eye.svg",
+    role: "user",
+    createdAt: "past",
     status: "Completed",
   },
 ];
@@ -161,8 +151,13 @@ function OrderManagement() {
   const [tab2, setTab2] = useState(1);
   const [isOpen, setIsOpen] = useState(false);
 
+  const [type, setType] = useState(1);
+
   const handelOnClick = (number) => {
     setTab(number);
+  };
+  const menuOnClick = (number) => {
+    setType(number);
   };
 
   return (
@@ -214,7 +209,15 @@ function OrderManagement() {
               <Menu.Button className="max-w-xs bg-white flex items-center outline-none text-sm  focus:outline-none ">
                 <span className="sr-only">Open user menu</span>
                 <div className="flex space-x-2 justify-end text-orange-500 px-4 py-2 rounded  border border-gray-200 ">
-                  <div>User</div>
+                  <div>
+                    {type === 1
+                      ? "User"
+                      : type === 2
+                      ? "Delivery agent"
+                      : type === 3
+                      ? "Veterinary Doctors"
+                      : "Service Provider"}
+                  </div>
                   <ChevronDownIcon className="h-4 w-4 text-orangePrimery self-center " />
                 </div>
               </Menu.Button>
@@ -231,21 +234,50 @@ function OrderManagement() {
               <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-xl py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none p-4 space-y-5">
                 <Menu.Item>
                   {({ active }) => (
-                    <button className="block" onClick={() => setTab2(1)}>
+                    <button
+                      className={` ${
+                        type === 1
+                          ? "  text-orangePrimery block"
+                          : " text-black block"
+                      } `}
+                      onClick={() => menuOnClick(1)}
+                    >
+                      User
+                    </button>
+                  )}
+                </Menu.Item>
+                <Menu.Item>
+                  {({ active }) => (
+                    <button
+                      className={` ${
+                        type === 2 ? " text-orangePrimery" : " text-black  "
+                      } `}
+                      onClick={() => menuOnClick(2)}
+                    >
                       Delivery Agent
                     </button>
                   )}
                 </Menu.Item>
                 <Menu.Item>
                   {({ active }) => (
-                    <button className="block" onClick={() => setTab2(2)}>
+                    <button
+                      className={` ${
+                        type === 3 ? "  text-orangePrimery" : " text-black "
+                      } `}
+                      onClick={() => menuOnClick(3)}
+                    >
                       Veterinary Doctors
                     </button>
                   )}
                 </Menu.Item>
                 <Menu.Item>
                   {({ active }) => (
-                    <button className="block" onClick={() => setTab2(3)}>
+                    <button
+                      className={` ${
+                        type === 4 ? " text-orangePrimery" : " text-black  "
+                      } `}
+                      onClick={() => menuOnClick(4)}
+                    >
                       Service Providers
                     </button>
                   )}
@@ -274,23 +306,121 @@ function OrderManagement() {
         </div>
       </div>
 
-      {tab === 1 ? (
+      {tab === 1 && type === 1 ? (
         <div>
-          <OrderManage table={orderManagementData} />
+          <OrderManage
+            table={orderManagementData.filter(
+              (item) => item?.createdAt === "today" && item?.role === "user"
+            )}
+          />
         </div>
-      ) : tab === 2 ? (
+      ) : tab === 1 && type === 2 ? (
         <div>
-          <OrderManage table={orderManagementData2} />
+          <OrderManage
+            table={orderManagementData.filter(
+              (item) =>
+                item?.createdAt === "today" && item?.role === "Delivery Agent"
+            )}
+          />
         </div>
-      ) : tab === 3 ? (
+      ) : tab === 1 && type === 3 ? (
         <div>
-          <OrderManage table={orderManagementData3} />
+          <OrderManage
+            table={orderManagementData.filter(
+              (item) =>
+                item?.createdAt === "today" &&
+                item?.role === "Veterinary Doctors"
+            )}
+          />
+        </div>
+      ) : tab === 1 && type === 4 ? (
+        <div>
+          <OrderManage
+            table={orderManagementData.filter(
+              (item) =>
+                item?.createdAt === "today" &&
+                item?.role === "Service Providers"
+            )}
+          />
+        </div>
+      ) : tab === 2 && type === 1 ? (
+        <div>
+          <OrderManage
+            table={orderManagementData.filter(
+              (item) => item?.createdAt === "Upcoming" && item?.role === "user"
+            )}
+          />
+        </div>
+      ) : tab === 2 && type === 2 ? (
+        <div>
+          <OrderManage
+            table={orderManagementData.filter(
+              (item) =>
+                item?.createdAt === "Upcoming" &&
+                item?.role === "Delivery Agent"
+            )}
+          />
+        </div>
+      ) : tab === 2 && type === 3 ? (
+        <div>
+          <OrderManage
+            table={orderManagementData.filter(
+              (item) =>
+                item?.createdAt === "Upcoming" &&
+                item?.role === "Veterinary Doctors"
+            )}
+          />
+        </div>
+      ) : tab === 2 && type === 4 ? (
+        <div>
+          <OrderManage
+            table={orderManagementData.filter(
+              (item) =>
+                item?.createdAt === "Upcoming" &&
+                item?.role === "Service Providers"
+            )}
+          />
+        </div>
+      ) : tab === 3 && type === 1 ? (
+        <div>
+          <OrderManage
+            table={orderManagementData.filter(
+              (item) => item?.createdAt === "today" && item?.role === "user"
+            )}
+          />
+        </div>
+      ) : tab === 3 && type === 2 ? (
+        <div>
+          <OrderManage
+            table={orderManagementData.filter(
+              (item) =>
+                item?.createdAt === "today" && item?.role === "Delivery Agent"
+            )}
+          />
+        </div>
+      ) : tab === 3 && type === 3 ? (
+        <div>
+          <OrderManage
+            table={orderManagementData.filter(
+              (item) =>
+                item?.createdAt === "today" &&
+                item?.role === "Veterinary Doctors"
+            )}
+          />
         </div>
       ) : (
         <div>
-          <OrderManage table={orderManagementData4} />
+          <OrderManage
+            table={orderManagementData.filter(
+              (item) =>
+                item?.createdAt === "today" &&
+                item?.role === "Service Providers"
+            )}
+          />
         </div>
       )}
+
+      {/* orderManagementData.filter((item,index) => item?.createdAt=== "today") */}
 
       <CommonDialog isOpen={isOpen} setIsOpen={setIsOpen}>
         {/* {tab === 1 && <OrderUser />} */}
