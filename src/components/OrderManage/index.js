@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import CommonDialog from "../Dialogs/CommonDialog";
 import OrderUser from "./User/user";
 import OrderTrack from "./OrderId/OrderTrack";
+import OrderId from "./OrderId";
 
 function OrderManage({ table }) {
   const [tab, setTab] = useState(1);
@@ -45,11 +46,12 @@ function OrderManage({ table }) {
                 <td className="table__body__text">{item.price}</td>
                 <td className="text-center ">
                   <button
-                  // onClick={() => setIsOpen(true)}
+                    // onClick={() => setIsOpen(true)}
+                    onClick={() => setIsOpen(true)}
                   >
-                    <a href={"/ordertrackpage"}>
-                      <img src={item.track} />
-                    </a>
+                    {/* <a href={"/ordertrackpage"}> */}
+                    <img src={item.track} />
+                    {/* </a> */}
                   </button>
                 </td>
                 <td>
@@ -62,9 +64,12 @@ function OrderManage({ table }) {
         {/* </div> */}
       </div>
 
-      {/* <CommonDialog isOpen={isOpen} setIsOpen={setIsOpen}>
+      <CommonDialog isOpen={isOpen} setIsOpen={setIsOpen}>
+        {/* {tab === 1 && <OrderId />}
+        {tab === 1 && <OrderTrack />} */}
+        {/* {tab === 1 ? <OrderId /> : <OrderTrack />} */}
         <OrderTrack />
-      </CommonDialog> */}
+      </CommonDialog>
     </div>
   );
 }

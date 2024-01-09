@@ -4,6 +4,9 @@ import Heading from "@/components/Layout/common/Heading";
 import OrderManage from "@/components/OrderManage";
 import OrderId from "@/components/OrderManage/OrderId";
 import OrderTrack from "@/components/OrderManage/OrderId/OrderTrack";
+import DeliveryAgentTable from "@/components/OrderManage/OrderManageTable/DeliveryAgentTable";
+import DoctorTable from "@/components/OrderManage/OrderManageTable/DoctorTable";
+import ServiceProviderTable from "@/components/OrderManage/OrderManageTable/ServiceProviderTable";
 // import OrderTrack from "@/components/OrderManage/OrderTrack";
 import OrderUser from "@/components/OrderManage/User/user";
 import User from "@/components/Tables/Users";
@@ -15,21 +18,39 @@ const orderManagementData = [
   {
     name: "Ethel Howard",
     id: "P1328SFFS001",
-    category: "Product",
-    subcategory: "Pedigree",
     date: "Aug 12, 2023",
     time: "3:42pm",
     price: "1000 /-",
     track: "/images/eye.svg",
-    role: "user",
+    role: "Delivery Agent",
+    createdAt: "today",
+    status: "Completed",
+  },
+  {
+    name: "Ethel Howard",
+    id: "P1328SFFS001",
+    date: "Aug 12, 2023",
+    time: "3:42pm",
+    price: "1000 /-",
+    track: "/images/eye.svg",
+    role: "Veterinary Doctors",
+    createdAt: "today",
+    status: "Completed",
+  },
+  {
+    name: "Husen Pawar",
+    id: "P1328SFFS001",
+    date: "Aug 12, 2023",
+    time: "3:42pm",
+    price: "1000 /-",
+    track: "/images/eye.svg",
+    role: "Veterinary Doctors",
     createdAt: "today",
     status: "Completed",
   },
   {
     name: "Devin Shelton",
     id: "P1328SFFS001",
-    category: "Services",
-    subcategory: "Dog Walking",
     date: "Aug 12, 2023",
     time: "3:45pm",
     price: "1000 /-",
@@ -41,8 +62,6 @@ const orderManagementData = [
   {
     name: "Devin Shelton",
     id: "P1328SFFS001",
-    category: "Product",
-    subcategory: "Pedigree",
     date: "Aug 12, 2023",
     time: "3:50pm",
     price: "1000 /-",
@@ -54,8 +73,6 @@ const orderManagementData = [
   {
     name: "Devin Shelton",
     id: "P1328SFFS001",
-    category: "Services",
-    subcategory: "Grooming",
     date: "Aug 12, 2023",
     time: "3:42pm",
     price: "1000 /-",
@@ -68,8 +85,6 @@ const orderManagementData = [
   {
     name: "Devin Shelton",
     id: "P1328SFFS001",
-    category: "Product",
-    subcategory: "Pedigree",
     date: "Aug 12, 2023",
     time: "3:42pm",
     price: "1000 /-",
@@ -81,8 +96,6 @@ const orderManagementData = [
   {
     name: "Ethel Howard",
     id: "P1328SFFS001",
-    category: "Product",
-    subcategory: "Pedigree",
     date: "Aug 12, 2023",
     time: "3:42pm",
     price: "1000 /-",
@@ -92,10 +105,19 @@ const orderManagementData = [
     status: "Completed",
   },
   {
+    name: "Ethel Howard",
+    id: "P1328SFFS001",
+    date: "Aug 12, 2023",
+    time: "3:42pm",
+    price: "1000 /-",
+    track: "/images/eye.svg",
+    role: "Service Providers",
+    createdAt: "today",
+    status: "Completed",
+  },
+  {
     name: "Devin Shelton",
     id: "P1328SFFS001",
-    category: "Services",
-    subcategory: "Dog Walking",
     date: "Aug 12, 2023",
     time: "3:45pm",
     price: "1000 /-",
@@ -107,8 +129,6 @@ const orderManagementData = [
   {
     name: "Devin Shelton",
     id: "P1328SFFS001",
-    category: "Product",
-    subcategory: "Pedigree",
     date: "Aug 12, 2023",
     time: "3:50pm",
     price: "1000 /-",
@@ -120,8 +140,6 @@ const orderManagementData = [
   {
     name: "Devin Shelton",
     id: "P1328SFFS001",
-    category: "Services",
-    subcategory: "Grooming",
     date: "Aug 12, 2023",
     time: "3:42pm",
     price: "1000 /-",
@@ -134,8 +152,6 @@ const orderManagementData = [
   {
     name: "Devin Shelton",
     id: "P1328SFFS001",
-    category: "Product",
-    subcategory: "Pedigree",
     date: "Aug 12, 2023",
     time: "3:42pm",
     price: "1000 /-",
@@ -316,7 +332,7 @@ function OrderManagement() {
         </div>
       ) : tab === 1 && type === 2 ? (
         <div>
-          <OrderManage
+          <DeliveryAgentTable
             table={orderManagementData.filter(
               (item) =>
                 item?.createdAt === "today" && item?.role === "Delivery Agent"
@@ -325,7 +341,7 @@ function OrderManagement() {
         </div>
       ) : tab === 1 && type === 3 ? (
         <div>
-          <OrderManage
+          <DoctorTable
             table={orderManagementData.filter(
               (item) =>
                 item?.createdAt === "today" &&
@@ -335,7 +351,7 @@ function OrderManagement() {
         </div>
       ) : tab === 1 && type === 4 ? (
         <div>
-          <OrderManage
+          <ServiceProviderTable
             table={orderManagementData.filter(
               (item) =>
                 item?.createdAt === "today" &&
@@ -353,7 +369,7 @@ function OrderManagement() {
         </div>
       ) : tab === 2 && type === 2 ? (
         <div>
-          <OrderManage
+          <DeliveryAgentTable
             table={orderManagementData.filter(
               (item) =>
                 item?.createdAt === "Upcoming" &&
@@ -363,7 +379,7 @@ function OrderManagement() {
         </div>
       ) : tab === 2 && type === 3 ? (
         <div>
-          <OrderManage
+          <DoctorTable
             table={orderManagementData.filter(
               (item) =>
                 item?.createdAt === "Upcoming" &&
@@ -373,7 +389,7 @@ function OrderManagement() {
         </div>
       ) : tab === 2 && type === 4 ? (
         <div>
-          <OrderManage
+          <ServiceProviderTable
             table={orderManagementData.filter(
               (item) =>
                 item?.createdAt === "Upcoming" &&
@@ -391,7 +407,7 @@ function OrderManagement() {
         </div>
       ) : tab === 3 && type === 2 ? (
         <div>
-          <OrderManage
+          <DeliveryAgentTable
             table={orderManagementData.filter(
               (item) =>
                 item?.createdAt === "today" && item?.role === "Delivery Agent"
@@ -400,7 +416,7 @@ function OrderManagement() {
         </div>
       ) : tab === 3 && type === 3 ? (
         <div>
-          <OrderManage
+          <DoctorTable
             table={orderManagementData.filter(
               (item) =>
                 item?.createdAt === "today" &&
@@ -410,7 +426,7 @@ function OrderManagement() {
         </div>
       ) : (
         <div>
-          <OrderManage
+          <ServiceProviderTable
             table={orderManagementData.filter(
               (item) =>
                 item?.createdAt === "today" &&
@@ -421,12 +437,11 @@ function OrderManagement() {
       )}
 
       {/* orderManagementData.filter((item,index) => item?.createdAt=== "today") */}
-
-      <CommonDialog isOpen={isOpen} setIsOpen={setIsOpen}>
-        {/* {tab === 1 && <OrderUser />} */}
-        {tab === 2 && <OrderId />}
-        {tab === 3 && <OrderTrack />}
-      </CommonDialog>
+      {/* <CommonDialog isOpen={isOpen} setIsOpen={setIsOpen}> */}
+      {/* {tab === 1 && <OrderUser />} */}
+      {/* {tab === 2 && <OrderId />}
+        {tab === 3 && <OrderTrack />} */}
+      {/* </CommonDialog> */}
       {/* <OrderTrack /> */}
     </div>
   );
