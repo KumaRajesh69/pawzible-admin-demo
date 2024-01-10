@@ -67,10 +67,8 @@ function Appointment() {
               <th>#</th>
               <th>Patient Name</th>
               <th> Gender</th>
-              <th>Time</th>
-              <th>View EMR</th>
-              <th>Appointment Type</th>
-              <th>Details</th>
+              <th className="text-center">Time</th>
+              <th className="text-center">Details</th>
             </tr>
           </thead>
           {data.map((item) => (
@@ -87,7 +85,7 @@ function Appointment() {
                     <p>{item.time}</p>
                   </div>
                 </td>
-                <td className="table__body__text">
+                {/* <td className="table__body__text">
                   <div className="flex justify-center items-center">
                     <button>
                       <img src={item.view} />
@@ -101,8 +99,8 @@ function Appointment() {
                       <p>{item.type2}</p>
                     </div>
                   </button>
-                </td>
-                <td className="table__body__text">
+                </td> */}
+                <td className="text-center">
                   <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-normal hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
                     {item.details}
                   </button>

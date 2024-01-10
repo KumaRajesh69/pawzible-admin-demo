@@ -17,7 +17,7 @@ import SupportGridCard from "@/components/SupportGridCard";
 
 const tabs = [
   {
-    name: "Personal Information",
+    name: "Overview",
     value: 1,
   },
   {
@@ -117,7 +117,7 @@ function index() {
               onClick={() => handelOnClick(item.value)}
               className={` ${
                 tab === item.value
-                  ? " flex-1 p-2 text-black border-b-5  border-b-black"
+                  ? " flex-1 p-2 text-black border-b-5  font-semibold text-lg border-b-black"
                   : " flex-1 p-2  text-gray-400  cursor-pointer "
               } `}
             >

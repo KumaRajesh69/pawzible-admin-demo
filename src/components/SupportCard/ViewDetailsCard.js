@@ -55,9 +55,11 @@ function ViewDetailsCard({ isOpen, setIsOpen }) {
           <button className="border border-black rounded-lg px-10 py-2">
             Call
           </button>
-          <button className="bg-orangePrimery text-white border rounded-lg px-10 py-2">
-            Chat
-          </button>
+          <a href="/support/chatsupport">
+            <button className="bg-orangePrimery text-white border rounded-lg px-10 py-2">
+              Chat
+            </button>
+          </a>
           <button className="border border-black  rounded-lg px-10 py-2">
             E-mail
           </button>

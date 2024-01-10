@@ -8,6 +8,7 @@ import Pet from "@/components/Tables/Users/pet";
 import React, { useState } from "react";
 import Support from "../support";
 import SupportGridCard from "@/components/SupportGridCard";
+import Review from "@/components/commonComponet/Review";
 
 const tabs = [
   {
@@ -25,6 +26,10 @@ const tabs = [
   {
     name: "Support",
     value: 4,
+  },
+  {
+    name: "Reviews & Ratings",
+    value: 5,
   },
 ];
 const data = [
@@ -87,7 +92,7 @@ function index() {
           ]}
         />
         <Heading title={"Stakeholder Management"} />
-        <div className="flex w-full rounded-xl overflow-x-scroll md:overflow-x-hidden md:w-3/5 my-5 text-sm text-gray-500 font-medium">
+        <div className="flex w-full rounded-xl overflow-x-scroll md:overflow-x-hidden md:w-4/5 my-5 text-sm text-gray-500 font-medium">
           {tabs.map((item) => (
             <div
               onClick={() => handelOnClick(item.value)}
@@ -114,8 +119,10 @@ function index() {
           <UserOrders />
         ) : tab === 3 ? (
           <Pet />
-        ) : (
+        ) : tab === 4 ? (
           <SupportGridCard supportTickets={data} />
+        ) : (
+          <Review />
         )}
       </div>
     </>

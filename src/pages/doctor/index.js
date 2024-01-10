@@ -15,29 +15,26 @@ const tabs = [
     name: "Overview",
     value: 1,
   },
+
   {
-    name: "Experience",
+    name: "Wallets",
     value: 2,
   },
   {
-    name: "Wallets",
+    name: "Reviews & Ratings",
     value: 3,
   },
   {
-    name: "Reviews & Ratings",
+    name: "Locations",
     value: 4,
   },
   {
-    name: "Locations",
+    name: "Appointments",
     value: 5,
   },
   {
-    name: "Appointments",
-    value: 6,
-  },
-  {
     name: "Blogs",
-    value: 7,
+    value: 6,
   },
 ];
 
@@ -82,16 +79,14 @@ function index() {
         {tab === 1 ? (
           <OverView />
         ) : tab === 2 ? (
-          <Experience />
-        ) : tab === 3 ? (
           <Wallet />
-        ) : tab === 4 ? (
+        ) : tab === 3 ? (
           <Review />
-        ) : tab === 5 ? (
+        ) : tab === 4 ? (
           <Location />
-        ) : tab === 6 ? (
+        ) : tab === 5 ? (
           <Appointment />
-        ) : tab === 7 ? (
+        ) : tab === 6 ? (
           <Blog />
         ) : (
           <DetailsBlog />
