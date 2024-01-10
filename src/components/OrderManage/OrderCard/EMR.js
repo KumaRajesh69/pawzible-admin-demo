@@ -4,7 +4,7 @@ import React from "react";
 
 function EMR({ setOpen }) {
   return (
-    <div className="h-[600px]">
+    <div className="">
       <div className="flex justify-end p-2">
         <button>
           {" "}
@@ -145,6 +145,34 @@ function EMR({ setOpen }) {
             When an unknown printer took a galley of type and scrambled it to
             make a type specimen book.
           </p>
+        </div>
+        <div className="space-y-2">
+          <p className=" font-medium text-base ">Prescription</p>
+          <button className="flex space-x-2 items-center">
+            <img src="images/pdfimage.svg" />
+            <p className="font-semibold text-[9px] text-[#12B76A]">
+              Prescription.pdf
+            </p>
+          </button>
+        </div>
+        <div className="space-y-2">
+          <div className="flex space-x-2">
+            <p className="font-medium text-base">Follow up Date:</p>
+            <p className="font-normal text-sm text-[#F99B3E]">14th sep 2023</p>
+          </div>
+          <p className="font-normal text-sm text-[#727272]">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s.
+          </p>
+        </div>
+        <div>
+          <p className="font-medium text-base ">Image Uploaded</p>
+          <div className="grid md:grid-cols-5 gap-2 py-3">
+            {[0, 1].map((item) => (
+              <img src="images/petdog.svg" />
+            ))}
+          </div>
         </div>
       </div>
     </div>
