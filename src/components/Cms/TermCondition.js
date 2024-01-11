@@ -4,6 +4,7 @@ import React from "react";
 function TermCondition({ isOpen, setIsOpen }) {
   return (
     <>
+      {/* <div className="w-[517px]"></div> */}
       <div className="py-4 border-b px-8 ">
         <div className="flex flex-row justify-between ">
           <p className="text-xl font-bold text-orangePrimery">

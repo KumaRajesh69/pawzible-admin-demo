@@ -1,4 +1,6 @@
 import Cms from "@/components/Cms";
+import AddNew from "@/components/Cms/AddNew";
+import CommonDialog from "@/components/Dialogs/CommonDialog";
 import BreadCrum from "@/components/Layout/common/BreadCrum";
 import Heading from "@/components/Layout/common/Heading";
 import Location from "@/components/commonComponet/Location";
@@ -14,6 +16,7 @@ const cmsData = [
     date: "12th sept 2022",
     term: "View Details",
     status: "Approved",
+    action: "images/dlt1122.svg",
   },
   {
     name: "Coupon 1  ",
@@ -23,6 +26,7 @@ const cmsData = [
     date: "12th sept 2022",
     term: "View Details",
     status: "Approved",
+    action: "images/dlt1122.svg",
   },
   {
     name: "Coupon 1  ",
@@ -32,6 +36,7 @@ const cmsData = [
     date: "12th sept 2022",
     term: "View Details",
     status: "Approved",
+    action: "images/dlt1122.svg",
   },
   {
     name: "Coupon 1  ",
@@ -41,6 +46,7 @@ const cmsData = [
     date: "12th sept 2022",
     term: "View Details",
     status: "Approved",
+    action: "images/dlt1122.svg",
   },
   {
     name: "Coupon 1  ",
@@ -50,11 +56,13 @@ const cmsData = [
     date: "12th sept 2022",
     term: "View Details",
     status: "Approved",
+    action: "images/dlt1122.svg",
   },
 ];
 
 function cms() {
   const [tab, setTab] = useState(1);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handelOnClick = (number) => {
     setTab(number);
@@ -65,11 +73,11 @@ function cms() {
       <BreadCrum
         data={[
           { name: "Dashboard", href: "/dashboard" },
-          { name: " CMS", href: "#" },
+          { name: " Content Management System", href: "#" },
         ]}
       />
 
-      <Heading title={"CMS"} />
+      <Heading title={"Content Management System"} />
       {/* <Cms table={cmsData} /> */}
       <div className="md:flex justify-between">
         <div className="flex overflow-x-scroll md:overflow-x-hidden w-full rounded-xl md:w-3/5 mt-5 text-sm text-gray-500 font-medium">
@@ -114,10 +122,14 @@ function cms() {
             Service Providers
           </button> */}
         </div>
-        <button className="bg-orangePrimery rounded-md my-5  text-white font-medium p-2">
+        <button
+          onClick={() => setIsOpen(true)}
+          className="bg-orangePrimery rounded-md my-5  text-white font-medium p-2"
+        >
           Add New
         </button>
       </div>
+      {tab === 1 && <Heading title={"Coupon Codes"} />}
       {tab === 1 ? (
         <Cms table={cmsData} />
       ) : tab === 2 ? (
@@ -125,6 +137,9 @@ function cms() {
       ) : (
         <Review />
       )}
+      <CommonDialog isOpen={isOpen} setIsOpen={setIsOpen}>
+        <AddNew isOpen={isOpen} setIsOpen={setIsOpen} />
+      </CommonDialog>
     </div>
   );
 }

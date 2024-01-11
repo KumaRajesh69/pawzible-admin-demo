@@ -10,14 +10,15 @@ function Cms({ table }) {
       <div className="h-full mb-20 mt-10 rounded-xl overflow-x-scroll md:overflow-x-hidden shadow-lg ">
         <table className="w-full">
           <thead className="bg-blue-200 h-10 rounded-t-xl ">
-            <tr className="text-left ">
+            <tr className="text-center ">
               <th>Name</th>
               <th>Title</th>
               <th>Amount</th>
               <th>Category</th>
               <th>Date</th>
-              <th>Terms and Conditions</th>
+              <th>T and C</th>
               <th>Status</th>
+              <th>Action</th>
             </tr>
           </thead>
           {table.map((item) => (
@@ -30,13 +31,18 @@ function Cms({ table }) {
                 <td className="table__body__text">{item.amount}</td>
                 <td className="table__body__text">{item.category}</td>
                 <td className="table__body__text">{item.date}</td>
-                <td>
+                <td className="text-center">
                   <button className="" onClick={() => setIsOpen(true)}>
                     {item.term}
                   </button>
                 </td>
                 <td>
                   <button className="td_Button">{item.status} </button>
+                </td>{" "}
+                <td className="text-center">
+                  <button className="">
+                    <img src={item.action} />{" "}
+                  </button>
                 </td>
               </tr>
             </tbody>
