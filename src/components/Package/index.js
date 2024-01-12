@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
+import CommonDialog from "../Dialogs/CommonDialog";
+import ViewDetailsCard from "../SupportCard/ViewDetailsCard";
+import DogCard from "./DogCard";
 
 function PackagePage({ table }) {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div>
       <div className="h-full my-5 rounded-xl overflow-x-scroll md:overflow-x-hidden shadow-lg ">
@@ -17,7 +22,10 @@ function PackagePage({ table }) {
           {table.map((item) => (
             <tbody className="w-full">
               <tr>
-                <td td className="td__Name">
+                <td
+                  onClick={() => setIsOpen(true)}
+                  className="font-medium text-xl cursor-pointer"
+                >
                   {item.name}
                 </td>
                 <td>
@@ -47,6 +55,9 @@ function PackagePage({ table }) {
           ))}
         </table>
       </div>
+      <CommonDialog isOpen={isOpen} setIsOpen={setIsOpen}>
+        <DogCard isOpen={isOpen} setIsOpen={setIsOpen} />
+      </CommonDialog>
     </div>
   );
 }
