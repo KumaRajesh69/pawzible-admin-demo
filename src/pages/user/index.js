@@ -92,26 +92,36 @@ function index() {
           ]}
         />
         <Heading title={"Stakeholder Management"} />
-        <div className="flex w-full rounded-xl overflow-x-scroll md:overflow-x-hidden md:w-4/5 my-5 text-sm text-gray-500 font-medium">
-          {tabs.map((item) => (
-            <div
-              onClick={() => handelOnClick(item.value)}
-              className={` ${
-                tab === item.value
-                  ? " flex-1 p-2 text-black border-b-5  border-b-black"
-                  : " flex-1 p-2  text-gray-400  cursor-pointer "
-              } `}
-            >
-              <p>{item.name}</p>
+        <div className="md:flex justify-between">
+          <div className="flex w-full rounded-xl overflow-x-scroll md:overflow-x-hidden md:w-4/5 my-5 text-sm text-gray-500 font-medium">
+            {tabs.map((item) => (
               <div
+                onClick={() => handelOnClick(item.value)}
                 className={` ${
                   tab === item.value
-                    ? " h-1 mt-1 bg-black rounded-full w-[30%]"
-                    : "  "
+                    ? " flex-1 p-2 text-black border-b-5  border-b-black"
+                    : " flex-1 p-2  text-gray-400  cursor-pointer "
                 } `}
-              />
-            </div>
-          ))}
+              >
+                <p>{item.name}</p>
+                <div
+                  className={` ${
+                    tab === item.value
+                      ? " h-1 mt-1 bg-black rounded-full w-[30%]"
+                      : "  "
+                  } `}
+                />
+              </div>
+            ))}
+          </div>
+          {tab === 2 && (
+            <button
+              className="bg-orangePrimery rounded-md my-5 text-xs md:text-base text-white font-medium p-2 "
+              // onClick={() => setIsOpen(true)}
+            >
+              Place an Order
+            </button>
+          )}
         </div>
         {tab === 1 ? (
           <Overview />

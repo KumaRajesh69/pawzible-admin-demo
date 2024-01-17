@@ -42,8 +42,8 @@ function User({ table }) {
               <th>Gender</th>
               <th>Address</th>
               <th>Category</th>
-              <th>Status</th>
-              <th>Details</th>
+              <th className="text-center">Status</th>
+              <th className="text-center">Details</th>
             </tr>
           </thead>
           <tbody className="w-full">
@@ -62,7 +62,9 @@ function User({ table }) {
                 </td>
                 <td>
                   {/* <button onClick={() => handleOnclick(item)}> */}
-                  <a href={"/user"}>{"View Details"}</a>
+                  <a href={"/user"} className="font-bold text-base ">
+                    View Details
+                  </a>
                   {/* </button> */}
                 </td>
               </tr>

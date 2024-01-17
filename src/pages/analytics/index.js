@@ -1,4 +1,5 @@
 import InvoiceManagement from "@/components/AccountManagement";
+import Analytics from "@/components/Analytics";
 import BreadCrum from "@/components/Layout/common/BreadCrum";
 import Heading from "@/components/Layout/common/Heading";
 import React from "react";
@@ -72,7 +73,8 @@ function Analytic() {
       />
 
       <Heading title={"Analytic"} />
-      <InvoiceManagement table={invoiceData} />
+      {/* <InvoiceManagement table={invoiceData} /> */}
+      <Analytics />
     </div>
   );
 }

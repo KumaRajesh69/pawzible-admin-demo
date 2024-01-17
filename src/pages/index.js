@@ -62,7 +62,7 @@ function Home() {
                   <div className="my-6">
                     <div class="relative mb-6">
                       <span class="absolute inset-y-0 bg-[#D9D9D9] rounded-s-2xl left-0 flex items-center border border-gray-400 px-3">
-                        <span class="text-gray-500 ">+91</span>
+                        <span class="text-black font-medium text-lg">+91</span>
                       </span>
                       <input
                         type="number"

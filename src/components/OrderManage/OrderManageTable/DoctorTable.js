@@ -29,7 +29,7 @@ function DoctorTable({ table }) {
                 <td td className="td__Name">
                   {item.name}
                 </td>
-                <td className="table__body__text">{item.category}</td>
+                <td className="font-semibold text-lg">{item.patient}</td>
                 {/* <td className="table__body__text">{item.subcategory}</td> */}
                 <td className="table__body__text">
                   <div>
@@ -38,13 +38,16 @@ function DoctorTable({ table }) {
                   </div>
                 </td>
                 <td className="table__body__text">{item.price}</td>
-                <td className="text-center ">
-                  <button onClick={() => setIsOpen(true)}>
-                    <img src={item.track} />
-                  </button>
-                </td>
+
                 <td>
                   <button className="td_Button">{item.status}</button>
+                </td>
+                <td className="text-center ">
+                  <button onClick={() => setIsOpen(true)}>
+                    <p className="font-bold text-lg text-orangePrimery">
+                      View Details
+                    </p>
+                  </button>
                 </td>
               </tr>
             </tbody>

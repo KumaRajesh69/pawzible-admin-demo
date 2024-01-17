@@ -25,12 +25,15 @@ function DeliveryAgentTable({ table }) {
             <tbody className="w-full">
               <tr>
                 <td className="">{item.id}</td>
-
                 <td td className="td__Name">
                   {item.name}
                 </td>
-                <td className="table__body__text">{item.category}</td>
-                {/* <td className="table__body__text">{item.subcategory}</td> */}
+                <td className="text-[#6A6A6A] text-lg font-medium">
+                  {item.product}
+                </td>{" "}
+                <td className="text-[#6A6A6A] text-lg font-medium">
+                  {item.address}
+                </td>
                 <td className="table__body__text">
                   <div>
                     <div> {item.date}</div>
@@ -38,13 +41,15 @@ function DeliveryAgentTable({ table }) {
                   </div>
                 </td>
                 <td className="table__body__text">{item.price}</td>
-                <td className="text-center ">
-                  <button onClick={() => setIsOpen(true)}>
-                    <img src={item.track} />
-                  </button>
-                </td>
                 <td>
                   <button className="td_Button">{item.status}</button>
+                </td>
+                <td className="text-center ">
+                  <button onClick={() => setIsOpen(true)}>
+                    <p className="font-bold text-lg text-orangePrimery">
+                      View Details
+                    </p>
+                  </button>
                 </td>
               </tr>
             </tbody>

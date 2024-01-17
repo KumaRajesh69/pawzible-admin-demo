@@ -7,7 +7,6 @@ function EMR({ setOpen }) {
     <div className="">
       <div className="flex justify-end p-2">
         <button>
-          {" "}
           {/* onClick={() => setOpen(false)} */}
           <XCircleIcon className="text-[#FF3C3C] h-8" />
         </button>

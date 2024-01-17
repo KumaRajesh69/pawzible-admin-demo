@@ -35,7 +35,7 @@ function OrderManage({ table }) {
                 <td td className="td__Name">
                   {item.name}
                 </td>
-                <td className="table__body__text">{item.category}</td>
+                <td className="table__body__text">{item.service}</td>
                 {/* <td className="table__body__text">{item.subcategory}</td> */}
                 <td className="table__body__text">
                   <div>
@@ -68,7 +68,7 @@ function OrderManage({ table }) {
         {/* {tab === 1 && <OrderId />}
         {tab === 1 && <OrderTrack />} */}
         {/* {tab === 1 ? <OrderId /> : <OrderTrack />} */}
-        <OrderTrack />
+        <OrderTrack isOpen={isOpen} setIsOpen={setIsOpen} />
       </CommonDialog>
     </div>
   );

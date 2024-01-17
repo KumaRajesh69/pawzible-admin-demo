@@ -25,31 +25,33 @@ function ServiceProviderTable({ table }) {
             <tbody className="w-full">
               <tr>
                 <td className="">{item.id}</td>
-
                 <td td className="td__Name">
                   {item.name}
                 </td>
-                <td className="table__body__text">{item.category}</td>
-                {/* <td className="table__body__text">{item.subcategory}</td> */}
+                <td className="text-[#6A6A6A] text-lg font-medium">
+                  {item.work}
+                </td>{" "}
+                <td className="text-[#6A6A6A] text-lg font-medium">
+                  {item.address}
+                </td>
                 <td className="table__body__text">
                   <div>
                     <div> {item.date}</div>
                     <div>{item.time}</div>
                   </div>
                 </td>
-                <td className="table__body__text">{item.price}</td>
-                <td className="text-center ">
-                  <button
-                    // onClick={() => setIsOpen(true)}
-                    onClick={() => setIsOpen(true)}
-                  >
-                    {/* <a href={"/ordertrackpage"}> */}
-                    <img src={item.track} />
-                    {/* </a> */}
-                  </button>
+                <td className="text-[#6A6A6A] text-lg font-medium">
+                  {item.price}
                 </td>
                 <td>
                   <button className="td_Button">{item.status}</button>
+                </td>
+                <td className="text-center ">
+                  <button onClick={() => setIsOpen(true)}>
+                    <p className="font-bold text-lg text-orangePrimery">
+                      View Details
+                    </p>
+                  </button>
                 </td>
               </tr>
             </tbody>

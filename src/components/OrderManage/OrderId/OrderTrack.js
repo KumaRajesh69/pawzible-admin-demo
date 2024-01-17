@@ -1,4 +1,5 @@
 import { ChevronRightIcon } from "@heroicons/react/outline";
+import { XCircleIcon } from "@heroicons/react/solid";
 import React, { useState } from "react";
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -31,19 +32,25 @@ const data = [
   },
 ];
 
-function OrderTrack() {
+function OrderTrack({ setIsOpen }) {
   const [step, setStep] = useState(1);
 
   return (
     <div className="my-2 rounded-xl p-4 md:p-8  overflow-hidden  shadow-lg max-w-xl w-full mx-auto bg-white">
       <div className=" space-y-6">
-        <div className="flex items-center">
-          <p className="text-orangePrimery text-xs font-normal">Home</p>
-          <ChevronRightIcon className="w-4 text-gray-500" />
-          <p className="text-orangePrimery text-xs font-normal">Orders</p>
-          <ChevronRightIcon className="w-4 text-gray-500" />
-          <p className="text-black text-xs font-normal">ID 3352655445</p>
+        <div className="flex justify-between">
+          <div className="flex items-center">
+            <p className="text-orangePrimery text-xs font-normal">Home</p>
+            <ChevronRightIcon className="w-4 text-gray-500" />
+            <p className="text-orangePrimery text-xs font-normal">Orders</p>
+            <ChevronRightIcon className="w-4 text-gray-500" />
+            <p className="text-black text-xs font-normal">ID 3352655445</p>
+          </div>{" "}
+          <button onClick={() => setIsOpen(false)}>
+            <XCircleIcon className="text-red-600 h-5" />
+          </button>
         </div>
+
         <div className="flex justify-between">
           <div>
             <p className="text-md font-semibold">Order ID: 3354654654526</p>
